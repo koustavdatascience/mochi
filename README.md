@@ -20,33 +20,20 @@
   <img src="docs/screenshots/in-action-showcase.png" alt="Mochi in action with the popup and cat on a page" width="560">
 </p>
 
-> Your tabs looked a little lonely. Mochi came to hang out.
-
 ## What is Mochi?
 
 Mochi is a lightweight Chromium extension that places a tiny animated cat on the pages you browse. Pick a style, drag it into a corner, and let it quietly keep you company while you work, study, watch, or wander around the web.
 
 <p align="center">
-  <img src="docs/screenshots/reference-style-showcase.png" alt="Mochi showcase with a desktop monitor and reference cats" width="760">
+  <img src="docs/screenshots/reference-style-showcase.png" alt="Mochi showcase with a desktop monitor and reference cats" width="560">
 </p>
 
 <p align="center">
   <img src="docs/screenshots/popup-showcase.png" alt="Mochi popup controls" width="560">
 </p>
 
-## Features
-
-| Feature | What it does |
-|---|---|
-| 19 cat styles | Choose from a local collection of animated cats. |
-| Drag and place | Move Mochi anywhere on the visible page. |
-| Shared position | Keep the same relative spot across eligible tabs and viewport sizes. |
-| Show cat | Bring Mochi into the current eligible page without a manual refresh. |
-| Pause cat | Freeze movement and animation when you need to focus. |
-| Local-first | No account, analytics, ads, remote APIs, or server-side data store. |
-
 <p align="center">
-  <img src="docs/screenshots/position-showcase.png" alt="Mochi keeping the same position across two browser tabs" width="760">
+  <img src="docs/screenshots/position-showcase.png" alt="Mochi keeping the same position across two browser tabs" width="560">
 </p>
 
 <p align="center">
@@ -72,8 +59,6 @@ The extension also attempts to recover into already-open eligible tabs after sta
 ## Cat styles
 
 Mochi includes **Bad Boy, Black Cat, Rolling Cat, Cream Cat, Frog Cat, Tiny Cat, Scarf Cat, Cat Roll, Blue Spinner, Yawning Cat, Pixel Cat, Blush Cat, Dancer, Meme Cat, Love Cat, Mewo, Sleepy Cat, White Kitty, and Bleh Cat**.
-
-Each style is shipped locally as an animated GIF and a matching paused PNG frame. The gallery below shows the complete set.
 
 <p align="center">
   <img src="docs/screenshots/cat-gallery.png" alt="Gallery of the 19 Mochi cat styles" width="900">
