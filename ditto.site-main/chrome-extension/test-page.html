@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mochi smoke test</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; }
+    body { margin: 0; min-height: 100vh; background: linear-gradient(135deg, #fff9f2, #f2e7ff); color: #302430; }
+    main { max-width: 760px; margin: 0 auto; padding: 13vh 32px; }
+    .card { padding: 40px; border-radius: 32px; background: rgba(255,255,255,.72); box-shadow: 0 24px 80px rgba(78,40,65,.12); }
+    h1 { margin: 0 0 12px; font-size: clamp(38px, 7vw, 72px); letter-spacing: -.06em; }
+    p { max-width: 52ch; font-size: 18px; line-height: 1.6; color: #6c5b69; }
+    .dot { display: inline-block; width: 10px; height: 10px; margin-right: 8px; border-radius: 50%; background: #e99d7c; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card">
+      <p><span class="dot"></span>Local smoke-test page</p>
+      <h1>A quiet little place to browse.</h1>
+      <p>Mochi should appear on top of this page, wander to a new spot, react to clicks, and stay visually separate from the page styles.</p>
+    </section>
+  </main>
+</body>
+</html>

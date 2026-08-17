@@ -1,0 +1,458 @@
+:host {
+  all: initial;
+}
+
+:host,
+* {
+  box-sizing: border-box;
+}
+
+.mochi-root {
+  --mochi-ink: #3f2d2c;
+  --mochi-muted: #8a6b64;
+  --mochi-cream: #fff8ee;
+  --mochi-peach: #f6b28b;
+  --mochi-peach-dark: #dc846d;
+  --mochi-shadow: rgba(70, 39, 34, 0.18);
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+  overflow: hidden;
+  font-family: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", system-ui, sans-serif;
+}
+
+.mochi-cat-wrap {
+  position: absolute;
+  width: 96px;
+  height: 116px;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 180ms ease;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.mochi-cat-wrap.is-dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+.mochi-cat-wrap.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mochi-cat {
+  position: absolute;
+  left: 9px;
+  top: 3px;
+  width: 78px;
+  height: 78px;
+  filter: drop-shadow(0 9px 5px var(--mochi-shadow));
+  transform-origin: 50% 86%;
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mochi-cat__body {
+  position: absolute;
+  left: 10px;
+  top: 31px;
+  width: 59px;
+  height: 43px;
+  border-radius: 49% 48% 42% 44%;
+  background: linear-gradient(145deg, #ffd1ad 0%, var(--mochi-peach) 62%, #e9987d 100%);
+}
+
+.mochi-cat__head {
+  position: absolute;
+  left: 13px;
+  top: 4px;
+  width: 55px;
+  height: 52px;
+  border-radius: 48% 51% 47% 49%;
+  background: linear-gradient(145deg, #ffd7b5 0%, #f4b38d 65%, #e9967b 100%);
+  border: 2px solid rgba(154, 78, 65, 0.16);
+}
+
+.mochi-cat__ear {
+  position: absolute;
+  top: -9px;
+  width: 23px;
+  height: 25px;
+  background: #f2aa86;
+  border: 2px solid rgba(154, 78, 65, 0.16);
+  transform: rotate(34deg);
+  border-radius: 5px 18px 4px 18px;
+  z-index: -1;
+}
+
+.mochi-cat__ear::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 4px 12px 4px 12px;
+  background: #e88b8c;
+}
+
+.mochi-cat__ear--left {
+  left: 1px;
+}
+
+.mochi-cat__ear--right {
+  right: 1px;
+  transform: rotate(56deg) scaleX(-1);
+}
+
+.mochi-cat__eye {
+  position: absolute;
+  top: 25px;
+  width: 7px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--mochi-ink);
+  transition: height 160ms ease, transform 160ms ease;
+}
+
+.mochi-cat__eye--left {
+  left: 15px;
+}
+
+.mochi-cat__eye--right {
+  right: 15px;
+}
+
+.mochi-cat__nose {
+  position: absolute;
+  left: 24px;
+  top: 34px;
+  width: 8px;
+  height: 6px;
+  border-radius: 50% 50% 60% 60%;
+  background: #c87573;
+}
+
+.mochi-cat__mouth {
+  position: absolute;
+  left: 27px;
+  top: 39px;
+  width: 3px;
+  height: 7px;
+  border-left: 1.5px solid #a95f61;
+  border-bottom: 1.5px solid #a95f61;
+  transform: rotate(-45deg);
+}
+
+.mochi-cat__blush {
+  position: absolute;
+  top: 36px;
+  width: 12px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(224, 116, 113, 0.32);
+}
+
+.mochi-cat__blush--left {
+  left: 5px;
+}
+
+.mochi-cat__blush--right {
+  right: 5px;
+}
+
+.mochi-cat__paw {
+  position: absolute;
+  top: 61px;
+  width: 22px;
+  height: 14px;
+  border-radius: 50%;
+  background: #f2ad87;
+  border: 1px solid rgba(154, 78, 65, 0.11);
+}
+
+.mochi-cat__paw--left {
+  left: 13px;
+  transform: rotate(18deg);
+}
+
+.mochi-cat__paw--right {
+  right: 13px;
+  transform: rotate(-18deg);
+}
+
+.mochi-cat__tail {
+  position: absolute;
+  left: 58px;
+  top: 40px;
+  width: 30px;
+  height: 38px;
+  border: 7px solid #e99d7c;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  transform: rotate(13deg);
+  transform-origin: 0 100%;
+  transition: transform 280ms ease;
+}
+
+.mochi-cat__tail::after {
+  content: "";
+  position: absolute;
+  right: -7px;
+  top: -8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e99d7c;
+}
+
+.mochi-cat__whiskers {
+  position: absolute;
+  top: 38px;
+  width: 18px;
+  height: 1px;
+  background: rgba(109, 70, 66, 0.48);
+}
+
+.mochi-cat__whiskers::before,
+.mochi-cat__whiskers::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 1px;
+  background: inherit;
+}
+
+.mochi-cat__whiskers::before {
+  top: -5px;
+}
+
+.mochi-cat__whiskers::after {
+  top: 5px;
+}
+
+.mochi-cat__whiskers--left {
+  left: -10px;
+}
+
+.mochi-cat__whiskers--right {
+  right: -10px;
+}
+
+.mochi-nameplate {
+  position: absolute;
+  left: 50%;
+  top: 83px;
+  transform: translateX(-50%);
+  padding: 4px 8px 5px;
+  border-radius: 99px;
+  color: var(--mochi-muted);
+  background: rgba(255, 248, 238, 0.86);
+  box-shadow: 0 4px 15px rgba(88, 48, 42, 0.08);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transition: opacity 180ms ease;
+  white-space: nowrap;
+}
+
+.mochi-cat-wrap:hover .mochi-nameplate,
+.mochi-cat-wrap:focus-visible .mochi-nameplate {
+  opacity: 1;
+}
+
+.mochi-bubble {
+  position: absolute;
+  left: 81px;
+  top: 0;
+  min-width: 70px;
+  max-width: 148px;
+  padding: 8px 11px;
+  border: 1px solid rgba(180, 124, 107, 0.2);
+  border-radius: 15px 15px 15px 4px;
+  color: var(--mochi-ink);
+  background: var(--mochi-cream);
+  box-shadow: 0 7px 22px rgba(88, 48, 42, 0.13);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.25;
+  opacity: 0;
+  transform: translateY(5px) scale(0.96);
+  transform-origin: bottom left;
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
+}
+
+.mochi-bubble.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.mochi-bubble::after {
+  content: "";
+  position: absolute;
+  left: 11px;
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  background: var(--mochi-cream);
+  border-right: 1px solid rgba(180, 124, 107, 0.2);
+  border-bottom: 1px solid rgba(180, 124, 107, 0.2);
+  transform: rotate(45deg);
+}
+
+.mochi-cat-wrap.is-left .mochi-bubble {
+  left: auto;
+  right: 81px;
+  border-radius: 15px 15px 4px 15px;
+  transform-origin: bottom right;
+}
+
+.mochi-cat-wrap.is-left .mochi-bubble::after {
+  left: auto;
+  right: 11px;
+}
+
+.mochi-z {
+  position: absolute;
+  left: 69px;
+  top: -9px;
+  color: var(--mochi-peach-dark);
+  font-size: 14px;
+  font-weight: 900;
+  opacity: 0;
+  transform: translate(0, 8px) rotate(12deg);
+}
+
+.mochi-z--two {
+  left: 84px;
+  top: -22px;
+  font-size: 11px;
+}
+
+.mochi-z--three {
+  left: 93px;
+  top: -31px;
+  font-size: 9px;
+}
+
+.mochi-sparkles {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 7px;
+  height: 7px;
+  color: #e9aa69;
+  opacity: 0;
+}
+
+.mochi-sparkles::before,
+.mochi-sparkles::after {
+  content: "✦";
+  position: absolute;
+  font-size: 12px;
+}
+
+.mochi-sparkles::after {
+  left: 27px;
+  top: 41px;
+  font-size: 8px;
+}
+
+.mochi-cat-wrap[data-mode="walk"] .mochi-cat {
+  animation: mochi-walk 760ms ease-in-out infinite alternate;
+}
+
+.mochi-cat-wrap[data-mode="walk"] .mochi-cat__tail {
+  animation: mochi-tail 900ms ease-in-out infinite alternate;
+}
+
+.mochi-cat-wrap[data-mode="sleep"] .mochi-cat {
+  transform: rotate(8deg) translateY(8px) scale(0.92);
+  animation: mochi-breathe 2.4s ease-in-out infinite;
+}
+
+.mochi-cat-wrap[data-mode="sleep"] .mochi-cat__eye {
+  height: 2px;
+  border-radius: 99px;
+  transform: translateY(3px);
+}
+
+.mochi-cat-wrap[data-mode="sleep"] .mochi-cat__tail {
+  transform: rotate(60deg) translate(0, 2px);
+}
+
+.mochi-cat-wrap[data-mode="sleep"] .mochi-z,
+.mochi-cat-wrap[data-mode="zoomies"] .mochi-sparkles,
+.mochi-cat-wrap[data-mode="stretch"] .mochi-sparkles {
+  animation: mochi-float 1.8s ease-out infinite;
+}
+
+.mochi-cat-wrap[data-mode="zoomies"] .mochi-cat {
+  animation: mochi-zoomies 420ms ease-in-out infinite alternate;
+}
+
+.mochi-cat-wrap[data-mode="stretch"] .mochi-cat {
+  animation: mochi-stretch 1.5s ease-in-out;
+}
+
+.mochi-cat-wrap[data-mode="purr"] .mochi-cat {
+  animation: mochi-purr 260ms ease-in-out 4 alternate;
+}
+
+@keyframes mochi-walk {
+  from { transform: translateY(0) rotate(-2deg); }
+  to { transform: translateY(-4px) rotate(2deg); }
+}
+
+@keyframes mochi-tail {
+  from { transform: rotate(5deg); }
+  to { transform: rotate(25deg); }
+}
+
+@keyframes mochi-breathe {
+  0%, 100% { transform: rotate(8deg) translateY(8px) scale(0.92, 0.92); }
+  50% { transform: rotate(8deg) translateY(6px) scale(0.96, 0.88); }
+}
+
+@keyframes mochi-float {
+  0% { opacity: 0; transform: translate(0, 8px) rotate(12deg) scale(0.8); }
+  30%, 70% { opacity: 1; }
+  100% { opacity: 0; transform: translate(13px, -26px) rotate(12deg) scale(1.1); }
+}
+
+@keyframes mochi-zoomies {
+  from { transform: rotate(-8deg) scale(1); }
+  to { transform: rotate(8deg) scale(1.08); }
+}
+
+@keyframes mochi-stretch {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(7px) scale(1.13, 0.84); }
+}
+
+@keyframes mochi-purr {
+  from { transform: translateX(-2px) rotate(-2deg); }
+  to { transform: translateX(2px) rotate(2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mochi-cat-wrap[data-mode="walk"] .mochi-cat,
+  .mochi-cat-wrap[data-mode="walk"] .mochi-cat__tail,
+  .mochi-cat-wrap[data-mode="sleep"] .mochi-cat,
+  .mochi-cat-wrap[data-mode="zoomies"] .mochi-cat,
+  .mochi-cat-wrap[data-mode="stretch"] .mochi-cat,
+  .mochi-cat-wrap[data-mode="purr"] .mochi-cat,
+  .mochi-z,
+  .mochi-sparkles {
+    animation: none;
+  }
+
+  .mochi-cat-wrap,
+  .mochi-cat,
+  .mochi-bubble {
+    transition-duration: 0ms;
+  }
+}

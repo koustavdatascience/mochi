@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Mochi — your little browser cat",
+  "description": "A tiny animated cat that wanders, naps, and keeps you company while you browse.",
+  "version": "0.1.0",
+  "author": "Mochi",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["styles.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icon.svg",
+    "32": "icon.svg",
+    "48": "icon.svg",
+    "128": "icon.svg"
+  },
+  "action": {
+    "default_title": "Mochi is nearby"
+  }
+}
