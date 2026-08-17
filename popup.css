@@ -5,28 +5,29 @@
 :root {
   color-scheme: light;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #fff7f7;
-  color: #33282b;
+  background: #f1f1ef;
+  color: #161616;
 }
 
 body {
   width: 300px;
   margin: 0;
-  background: #fff7f7;
+  background: #f1f1ef;
 }
 
 .popup-shell {
   position: relative;
-  padding: 18px;
+  padding: 16px;
   overflow: hidden;
+  background: #f1f1ef;
 }
 
 .popup-shell::before {
   position: absolute;
-  top: 11px;
+  top: 10px;
   right: 16px;
   content: "♡";
-  color: #efb2bb;
+  color: #8b8b86;
   font-size: 18px;
   line-height: 1;
   transform: rotate(10deg);
@@ -38,32 +39,46 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
+  padding: 12px;
+  border-radius: 18px;
+  background: #111;
+  color: #fff;
+  box-shadow: 0 4px 0 #d2d2ce;
+}
+
+.popup-header::after {
+  position: absolute;
+  right: 13px;
+  bottom: 9px;
+  content: "✦";
+  color: #fff;
+  font-size: 11px;
+  opacity: 0.7;
 }
 
 .popup-header h1 {
   margin: 0;
-  color: #30252a;
+  color: #fff;
   font-size: 17px;
   letter-spacing: -0.02em;
 }
 
 .popup-header p {
   margin: 3px 0 0;
-  color: #8b7277;
+  color: #cfcfcb;
   font-size: 11px;
 }
 
 .cat-mark {
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   flex: 0 0 auto;
   object-fit: cover;
   border: 2px solid #fff;
   border-radius: 14px;
   background: #fff;
-  box-shadow: 0 3px 0 #f1c7cb;
-  image-rendering: pixelated;
+  box-shadow: 0 2px 0 #777;
 }
 
 .controls {
@@ -77,16 +92,18 @@ body {
   justify-content: space-between;
   gap: 12px;
   padding: 12px;
-  border: 1px solid #f3dfe2;
-  border-radius: 16px;
+  border: 1px solid #dcdcd8;
+  border-radius: 15px;
   background: #fff;
-  box-shadow: 0 3px 0 #f7e8e9;
+  box-shadow: 0 3px 0 #e0e0dc;
   cursor: pointer;
+  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
 }
 
 .control-row:hover {
-  border-color: #edb8c1;
-  background: #fffafb;
+  transform: translateY(-1px);
+  border-color: #111;
+  background: #fafaf8;
 }
 
 .control-row strong,
@@ -95,12 +112,13 @@ body {
 }
 
 .control-row strong {
+  color: #171717;
   font-size: 12px;
 }
 
 .control-row small {
   margin-top: 3px;
-  color: #927b81;
+  color: #777772;
   font-size: 10px;
 }
 
@@ -115,26 +133,28 @@ body {
   width: 34px;
   height: 20px;
   flex: 0 0 auto;
+  border: 1px solid #c4c4c0;
   border-radius: 999px;
-  background: #dacbc2;
-  transition: background 160ms ease;
+  background: #d8d8d4;
+  transition: background 160ms ease, border-color 160ms ease;
 }
 
 .switch::after {
-  content: "";
   position: absolute;
   top: 3px;
   left: 3px;
   width: 14px;
   height: 14px;
+  content: "";
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 1px 3px rgb(45 33 29 / 20%);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 24%);
   transition: transform 160ms ease;
 }
 
 .control-row input:checked + .switch {
-  background: #e78d9e;
+  border-color: #111;
+  background: #111;
 }
 
 .control-row input:checked + .switch::after {
@@ -144,19 +164,19 @@ body {
 .status {
   min-height: 14px;
   margin: 12px 2px 0;
-  color: #aa8089;
+  color: #70706b;
   font-size: 10px;
 }
 
 .credit {
   margin: 14px 2px 0;
-  color: #ad8990;
+  color: #858580;
   font-size: 10px;
   text-align: center;
 }
 
 .credit a {
-  color: #bd6175;
+  color: #111;
   font-weight: 700;
   text-decoration: none;
 }
@@ -171,14 +191,14 @@ body {
   gap: 7px;
   margin: 0 0 10px;
   padding: 13px 14px;
-  border: 1px solid #f1dce0;
-  border-radius: 17px;
-  background: #fffdfd;
-  box-shadow: 0 3px 0 #f8e8ea;
+  border: 1px solid #dcdcd8;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 3px 0 #e0e0dc;
 }
 
 .skin-picker label {
-  color: #644c55;
+  color: #2f2f2c;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -187,16 +207,16 @@ body {
 #cat-select {
   width: 100%;
   padding: 9px 32px 9px 10px;
-  border: 1px solid #e8cbd0;
-  border-radius: 11px;
-  background: #fff8f8;
-  color: #3b2e33;
+  border: 1px solid #cfcfca;
+  border-radius: 10px;
+  background: #f8f8f6;
+  color: #161616;
   font: inherit;
   font-size: 13px;
   outline: none;
 }
 
 #cat-select:focus {
-  border-color: #e28b9b;
-  box-shadow: 0 0 0 3px rgba(226, 139, 155, 0.18);
+  border-color: #111;
+  box-shadow: 0 0 0 3px rgb(17 17 17 / 12%);
 }

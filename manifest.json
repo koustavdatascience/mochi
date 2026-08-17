@@ -7,17 +7,17 @@
     "default_title": "Mochi",
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "assets/desktop-cat-icon-16.png",
-      "32": "assets/desktop-cat-icon-32.png",
-      "48": "assets/desktop-cat-icon-48.png",
-      "128": "assets/desktop-cat-icon-128.png"
+      "16": "assets/mochi-icon-16.png",
+      "32": "assets/mochi-icon-32.png",
+      "48": "assets/mochi-icon-48.png",
+      "128": "assets/mochi-icon-128.png"
     }
   },
   "icons": {
-    "16": "assets/desktop-cat-icon-16.png",
-    "32": "assets/desktop-cat-icon-32.png",
-    "48": "assets/desktop-cat-icon-48.png",
-    "128": "assets/desktop-cat-icon-128.png"
+    "16": "assets/mochi-icon-16.png",
+    "32": "assets/mochi-icon-32.png",
+    "48": "assets/mochi-icon-48.png",
+    "128": "assets/mochi-icon-128.png"
   },
   "permissions": ["storage"],
   "background": {

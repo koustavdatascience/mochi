@@ -10,8 +10,8 @@ assert manifest["name"] == "Mochi"
 assert manifest["action"]["default_title"] == "Mochi"
 assert manifest["content_scripts"][0]["matches"] == ["<all_urls>"]
 assert "storage" in manifest["permissions"]
-assert manifest["icons"]["128"] == "assets/desktop-cat-icon-128.png"
-assert manifest["action"]["default_icon"]["32"] == "assets/desktop-cat-icon-32.png"
+assert manifest["icons"]["128"] == "assets/mochi-icon-128.png"
+assert manifest["action"]["default_icon"]["32"] == "assets/mochi-icon-32.png"
 assert "host_permissions" not in manifest
 resources = manifest["web_accessible_resources"][0]["resources"]
 assert "assets/*.gif" in resources
@@ -25,11 +25,11 @@ required_runtime = [
     "popup.html",
     "popup.css",
     "popup.js",
-    "assets/desktop-cat.png",
-    "assets/desktop-cat-icon-16.png",
-    "assets/desktop-cat-icon-32.png",
-    "assets/desktop-cat-icon-48.png",
-    "assets/desktop-cat-icon-128.png",
+    "assets/mochi-logo.png",
+    "assets/mochi-icon-16.png",
+    "assets/mochi-icon-32.png",
+    "assets/mochi-icon-48.png",
+    "assets/mochi-icon-128.png",
 ]
 for relative in required_runtime:
     assert (root / relative).exists(), relative
