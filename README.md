@@ -47,14 +47,6 @@ Mochi is a lightweight Chromium extension that places a tiny animated cat on the
 4. Click **Load unpacked** and select the folder containing `manifest.json`.
 5. Open a normal website, click the Mochi toolbar icon, choose a cat, and switch on **Show cat**.
 
-The unpacked-extension workflow is documented by [Chrome][1], with a similar local-loading flow available for [Microsoft Edge][2].
-
-## Use Mochi
-
-Open the popup to choose a cat or toggle **Show cat** and **Pause cat**. Drag the cat on any eligible page to save its normalized position. Mochi broadcasts the selected style, visibility, pause state, and position across eligible tabs.
-
-The extension also attempts to recover into already-open eligible tabs after startup, updates, tab activation, and page completion. Protected browser surfaces such as `chrome://extensions` and the Chrome Web Store cannot be injected by extensions.
-
 ## Cat styles
 
 Mochi includes **Bad Boy, Black Cat, Rolling Cat, Cream Cat, Frog Cat, Tiny Cat, Scarf Cat, Cat Roll, Blue Spinner, Yawning Cat, Pixel Cat, Blush Cat, Dancer, Meme Cat, Love Cat, Mewo, Sleepy Cat, White Kitty, Bleh Cat, and Paper Hat**.
