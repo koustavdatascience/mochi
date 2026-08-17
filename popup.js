@@ -48,7 +48,11 @@ visibilityToggle.addEventListener("change", async () => {
     return;
   }
   renderState(response);
-  setStatus(response.visible ? "Cat is back in every tab." : "Cat is hidden in every tab.");
+  if (response.visible && response.currentTabInjected === false) {
+    setStatus("Cat enabled. This page may be protected.");
+  } else {
+    setStatus(response.visible ? "Cat is back in every tab." : "Cat is hidden in every tab.");
+  }
 });
 
 catSelect.addEventListener("change", async () => {

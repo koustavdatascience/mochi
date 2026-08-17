@@ -35,10 +35,10 @@ Mochi currently includes **nineteen cat styles**, ranging from pixel-art compani
 | Feature | What it does |
 | --- | --- |
 | **Nineteen cat styles** | Choose the animation that matches your mood. Each style has an animated GIF and a matching PNG pause frame, with short names that are easy to scan. |
-| **Cross-tab synchronization** | Your selected cat, visibility setting, and pause state are shared across eligible tabs. |
-| **Drag-and-drop positioning** | Move Mochi around the page and leave it wherever you like. |
+| **Cross-tab synchronization** | Your selected cat, visibility setting, pause state, and position are shared across eligible tabs. |
+| **Drag-and-drop positioning** | Move Mochi around the page and leave it wherever you like; the position is stored as a normalized viewport placement so it stays consistent across tabs and screen sizes. |
 | **Pause mode** | Freeze the current cat when you need a quiet, still companion. |
-| **Global visibility control** | Show or hide Mochi across all eligible tabs from the popup. |
+| **Global visibility control** | Show or hide Mochi across all eligible tabs from the popup. Turning it on also attempts to inject Mochi into the current eligible tab immediately. |
 | **Offline-first behavior** | The extension ships its assets locally and does not require an account or network connection. |
 | **Official Mochi branding** | The supplied black cat mark is used in the popup, toolbar icon, extension listing icon, and README. |
 
@@ -82,10 +82,10 @@ After installation, open the extension popup from the browser toolbar. The popup
 | Control | Behavior |
 | --- | --- |
 | **Cat style** | Select one of the nineteen available companions. The selected style is applied to every eligible tab. |
-| **Show cat** | Toggle Mochi’s visibility across eligible tabs. |
+| **Show cat** | Toggle Mochi’s visibility across eligible tabs. Turning it on actively injects Mochi into the current eligible tab, so a page refresh is usually unnecessary. |
 | **Pause cat** | Freeze or resume the cat’s movement and animation everywhere. |
 
-Mochi can be dragged directly on the page. Its position is clamped to the visible viewport so it remains reachable instead of disappearing beyond the edge.
+Mochi can be dragged directly on the page. Its position is clamped to the visible viewport and saved as a normalized placement, so the cat stays in the same relative spot when you switch to another tab or open a page with a different viewport size. Turning **Show cat** on from the popup also asks the current eligible tab to inject Mochi immediately.
 
 The extension persists shared preferences with the browser’s local extension storage. If an older installation contains a style that is no longer available, Mochi automatically falls back to the current default style rather than leaving a tab without a valid asset.
 

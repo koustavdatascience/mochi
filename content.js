@@ -35,6 +35,7 @@
     skin: "bttvRolling",
     x: Math.max(MARGIN, window.innerWidth - CAT_SIZE - 48),
     y: Math.max(MARGIN, window.innerHeight - CAT_SIZE - 12),
+    position: { x: 0.92, y: 0.88 },
     visible: true,
     paused: false,
     assetMode: "animated",
@@ -52,6 +53,47 @@
 
   function extensionAsset(relativePath) {
     return chrome.runtime.getURL(relativePath);
+  }
+
+  function maxPosition() {
+    return {
+      x: Math.max(MARGIN, window.innerWidth - CAT_SIZE - MARGIN),
+      y: Math.max(MARGIN, window.innerHeight - CAT_SIZE - MARGIN)
+    };
+  }
+
+  function normalizePosition(position) {
+    const x = Number(position?.x);
+    const y = Number(position?.y);
+    return {
+      x: Number.isFinite(x) ? clamp(x, 0, 1) : 0.92,
+      y: Number.isFinite(y) ? clamp(y, 0, 1) : 0.88
+    };
+  }
+
+  function applyNormalizedPosition(position) {
+    state.position = normalizePosition(position);
+    const limits = maxPosition();
+    state.x = state.position.x * limits.x;
+    state.y = state.position.y * limits.y;
+  }
+
+  function currentNormalizedPosition() {
+    const limits = maxPosition();
+    return {
+      x: limits.x ? clamp(state.x / limits.x, 0, 1) : 0.92,
+      y: limits.y ? clamp(state.y / limits.y, 0, 1) : 0.88
+    };
+  }
+
+  function persistPosition() {
+    state.position = currentNormalizedPosition();
+    chrome.runtime.sendMessage({
+      type: "desktop-cat:set-position",
+      position: state.position
+    }, () => {
+      void chrome.runtime.lastError;
+    });
   }
 
   function updateAsset() {
@@ -125,6 +167,9 @@
     if (typeof sharedState.paused === "boolean") {
       state.paused = sharedState.paused;
     }
+    if (sharedState.position && typeof sharedState.position === "object") {
+      applyNormalizedPosition(sharedState.position);
+    }
     if (state.root) {
       state.root.hidden = !state.visible;
     }
@@ -134,8 +179,7 @@
   }
 
   function handleResize() {
-    state.x = clamp(state.x, MARGIN, Math.max(MARGIN, window.innerWidth - CAT_SIZE - MARGIN));
-    state.y = clamp(state.y, MARGIN, Math.max(MARGIN, window.innerHeight - CAT_SIZE - MARGIN));
+    applyNormalizedPosition(state.position);
     render();
   }
 
@@ -181,6 +225,7 @@
     state.pointerId = null;
     state.cat?.classList.remove("is-dragging");
     state.cat?.releasePointerCapture?.(event.pointerId);
+    persistPosition();
   }
 
   function createCat() {
@@ -206,6 +251,7 @@
 
     state.root = root;
     state.cat = cat;
+    applyNormalizedPosition(state.position);
     updateAsset();
     render();
   }
@@ -217,30 +263,37 @@
 
     if (message.type === "desktop-cat:sync-state") {
       applySharedState(message);
-      sendResponse?.({ visible: state.visible, paused: state.paused, skin: state.skin, skinLabel: SKINS[state.skin].label });
+      sendResponse?.({ visible: state.visible, paused: state.paused, skin: state.skin, position: state.position, skinLabel: SKINS[state.skin].label });
       return;
     }
 
     if (message.type === "desktop-cat:set-visible") {
       setVisible(message.visible);
-      sendResponse?.({ visible: state.visible, paused: state.paused, skin: state.skin, skinLabel: SKINS[state.skin].label });
+      sendResponse?.({ visible: state.visible, paused: state.paused, skin: state.skin, position: state.position, skinLabel: SKINS[state.skin].label });
       return;
     }
 
     if (message.type === "desktop-cat:set-paused") {
       setPaused(message.paused);
-      sendResponse?.({ visible: state.visible, paused: state.paused, skin: state.skin, skinLabel: SKINS[state.skin].label });
+      sendResponse?.({ visible: state.visible, paused: state.paused, skin: state.skin, position: state.position, skinLabel: SKINS[state.skin].label });
       return;
     }
 
     if (message.type === "desktop-cat:set-skin") {
       const changed = setSkin(message.skin);
-      sendResponse?.({ changed, visible: state.visible, paused: state.paused, skin: state.skin, skinLabel: SKINS[state.skin].label });
+      sendResponse?.({ changed, visible: state.visible, paused: state.paused, skin: state.skin, position: state.position, skinLabel: SKINS[state.skin].label });
+      return;
+    }
+
+    if (message.type === "desktop-cat:set-position") {
+      applyNormalizedPosition(message.position);
+      render();
+      sendResponse?.({ changed: true, visible: state.visible, paused: state.paused, skin: state.skin, position: state.position, skinLabel: SKINS[state.skin].label });
       return;
     }
 
     if (message.type === "desktop-cat:get-state") {
-      sendResponse?.({ visible: state.visible, paused: state.paused, skin: state.skin, skinLabel: SKINS[state.skin].label });
+      sendResponse?.({ visible: state.visible, paused: state.paused, skin: state.skin, position: state.position, skinLabel: SKINS[state.skin].label });
     }
   }
 

@@ -23,15 +23,30 @@ const SKIN_LABELS = Object.freeze({
 const DEFAULT_STATE = Object.freeze({
   skin: "bttvRolling",
   visible: true,
-  paused: false
+  paused: false,
+  position: { x: 0.92, y: 0.88 }
 });
 
-let sharedState = { ...DEFAULT_STATE };
+let sharedState = { ...DEFAULT_STATE, position: { ...DEFAULT_STATE.position } };
+
+function normalizePosition(position) {
+  if (!position || typeof position !== "object") {
+    return { ...DEFAULT_STATE.position };
+  }
+  const x = Number(position.x);
+  const y = Number(position.y);
+  return {
+    x: Number.isFinite(x) ? Math.min(Math.max(x, 0), 1) : DEFAULT_STATE.position.x,
+    y: Number.isFinite(y) ? Math.min(Math.max(y, 0), 1) : DEFAULT_STATE.position.y
+  };
+}
+
 const stateReady = chrome.storage.local.get(DEFAULT_STATE).then((stored) => {
   sharedState = {
     skin: typeof stored.skin === "string" && SKIN_LABELS[stored.skin] ? stored.skin : DEFAULT_STATE.skin,
     visible: typeof stored.visible === "boolean" ? stored.visible : DEFAULT_STATE.visible,
-    paused: typeof stored.paused === "boolean" ? stored.paused : DEFAULT_STATE.paused
+    paused: typeof stored.paused === "boolean" ? stored.paused : DEFAULT_STATE.paused,
+    position: normalizePosition(stored.position)
   };
   return sharedState;
 });
@@ -39,13 +54,18 @@ const stateReady = chrome.storage.local.get(DEFAULT_STATE).then((stored) => {
 function responseState(extra = {}) {
   return {
     ...sharedState,
+    position: { ...sharedState.position },
     skinLabel: SKIN_LABELS[sharedState.skin] || SKIN_LABELS.bttvRolling,
     ...extra
   };
 }
 
 async function persistAndBroadcast(nextState) {
-  sharedState = { ...sharedState, ...nextState };
+  sharedState = {
+    ...sharedState,
+    ...nextState,
+    position: normalizePosition(nextState.position || sharedState.position)
+  };
   await chrome.storage.local.set(sharedState);
 
   const tabs = await chrome.tabs.query({});
@@ -54,7 +74,7 @@ async function persistAndBroadcast(nextState) {
       .filter((tab) => tab.id !== undefined)
       .map((tab) => chrome.tabs.sendMessage(tab.id, {
         type: "desktop-cat:sync-state",
-        ...sharedState
+        ...responseState()
       }).catch(() => undefined))
   );
 }
@@ -68,8 +88,14 @@ async function rehydrateTab(tabId) {
   try {
     await chrome.scripting.insertCSS({ target: { tabId }, files: ["cat.css"] });
     await chrome.scripting.executeScript({ target: { tabId }, files: ["content.js"] });
+    await chrome.tabs.sendMessage(tabId, {
+      type: "desktop-cat:sync-state",
+      ...responseState()
+    }).catch(() => undefined);
+    return true;
   } catch (_error) {
     // Protected browser pages and tabs without host access are expected to reject injection.
+    return false;
   }
 }
 
@@ -79,12 +105,31 @@ async function rehydrateOpenTabs() {
   await Promise.all(tabs.filter(isEligibleTab).map((tab) => rehydrateTab(tab.id)));
 }
 
+async function rehydrateActiveTab() {
+  const tabs = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
+  const tab = tabs[0];
+  if (!tab || !isEligibleTab(tab)) {
+    return false;
+  }
+  return rehydrateTab(tab.id);
+}
+
 chrome.runtime.onInstalled.addListener(() => {
   rehydrateOpenTabs();
 });
 
 chrome.runtime.onStartup.addListener(() => {
   rehydrateOpenTabs();
+});
+
+chrome.tabs.onActivated.addListener(({ tabId }) => {
+  rehydrateTab(tabId);
+});
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
+  if (changeInfo.status === "complete") {
+    rehydrateTab(tabId);
+  }
 });
 
 chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
@@ -99,8 +144,10 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
     }
 
     if (message.type === "desktop-cat:set-visible") {
-      await persistAndBroadcast({ visible: Boolean(message.visible) });
-      sendResponse(responseState());
+      const visible = Boolean(message.visible);
+      const currentTabInjected = visible ? await rehydrateActiveTab() : true;
+      await persistAndBroadcast({ visible });
+      sendResponse(responseState({ currentTabInjected }));
       return;
     }
 
@@ -116,6 +163,12 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
         return;
       }
       await persistAndBroadcast({ skin: message.skin });
+      sendResponse(responseState({ changed: true }));
+      return;
+    }
+
+    if (message.type === "desktop-cat:set-position") {
+      await persistAndBroadcast({ position: normalizePosition(message.position) });
       sendResponse(responseState({ changed: true }));
     }
   }).catch(() => sendResponse(null));

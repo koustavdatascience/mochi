@@ -67,7 +67,12 @@ assert "XMLHttpRequest" not in source
 assert "desktop-cat:set-skin" in source
 assert "desktop-cat:get-shared-state" in source
 assert "desktop-cat:sync-state" in source
+assert "desktop-cat:set-position" in source
 assert "chrome.scripting" in source
+assert "currentTabInjected" in source
+assert "chrome.tabs.onActivated" in source
+assert "chrome.tabs.onUpdated" in source
+assert "position" in source
 assert "rehydrateOpenTabs" in source
 assert "__mochiContentInitialized" in source
 assert "github.com/koustavdatascience" in source
