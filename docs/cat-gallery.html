@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mochi Cat Styles</title>
+  <style>
+    :root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #161616; background: #efefed; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 56px; background: radial-gradient(circle at 88% 0%, #fff 0 13%, transparent 38%), #efefed; }
+    .wrap { width: min(1180px, 100%); margin: 0 auto; }
+    header { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 30px; }
+    .brand { display: flex; align-items: center; gap: 18px; }
+    .logo { width: 72px; height: 72px; border: 4px solid #111; border-radius: 22px; background: #fff; object-fit: cover; box-shadow: 0 5px 0 #c8c8c4; }
+    h1 { margin: 0; font-size: 42px; letter-spacing: -.06em; }
+    header p { max-width: 390px; margin: 0; color: #70706b; line-height: 1.5; text-align: right; }
+    .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+    .card { min-height: 178px; display: grid; place-items: center; padding: 12px; border: 1px solid #d7d7d3; border-radius: 18px; background: #fff; box-shadow: 0 4px 0 #dededb; }
+    .card img { width: 132px; height: 116px; object-fit: contain; image-rendering: auto; }
+    .card span { align-self: end; color: #585853; font-size: 11px; font-weight: 750; text-align: center; }
+    @media (max-width: 900px) { body { padding: 30px; } .grid { grid-template-columns: repeat(3, 1fr); } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="brand">
+        <img class="logo" src="../assets/mochi-logo.png" alt="Mochi black cat logo">
+        <h1>Meet the Mochis</h1>
+      </div>
+      <p>Nineteen tiny companions, each with a different mood, ready to keep your browser tabs company.</p>
+    </header>
+    <section class="grid" aria-label="Mochi cat styles">
+      <article class="card"><img src="../assets/bad-boy.png" alt="Bad Boy Cat"><span>Bad Boy Cat</span></article>
+      <article class="card"><img src="../assets/black-cat.png" alt="Black Cat"><span>Black Cat</span></article>
+      <article class="card"><img src="../assets/bttv-rolling-cat.png" alt="BTTV Rolling Cat"><span>BTTV Rolling Cat</span></article>
+      <article class="card"><img src="../assets/little-cream-cat.png" alt="Little Cream Cat"><span>Little Cream Cat</span></article>
+      <article class="card"><img src="../assets/green-frog-cat.png" alt="Green Frog Cat"><span>Green Frog Cat</span></article>
+      <article class="card"><img src="../assets/tiny-cute-cat.png" alt="Tiny Cute Cat"><span>Tiny Cute Cat</span></article>
+      <article class="card"><img src="../assets/cat-in-a-scarf.png" alt="Cat in a Scarf"><span>Cat in a Scarf</span></article>
+      <article class="card"><img src="../assets/black-cat-roll.png" alt="Black Cat Roll"><span>Black Cat Roll</span></article>
+      <article class="card"><img src="../assets/spinning-blue-cat.png" alt="Spinning Blue Cat"><span>Spinning Blue Cat</span></article>
+      <article class="card"><img src="../assets/yawning-white-cat.png" alt="Yawning White Cat"><span>Yawning White Cat</span></article>
+      <article class="card"><img src="../assets/gray-pixel-cat.png" alt="Gray Pixel Cat"><span>Gray Pixel Cat</span></article>
+      <article class="card"><img src="../assets/blushing-cute-cat.png" alt="Blushing Cute Cat"><span>Blushing Cute Cat</span></article>
+      <article class="card"><img src="../assets/dance-break.png" alt="Dance Break Cat"><span>Dance Break Cat</span></article>
+      <article class="card"><img src="../assets/blue-meme-cat.png" alt="Blue Meme Cat"><span>Blue Meme Cat</span></article>
+      <article class="card"><img src="../assets/heart-love-cat.png" alt="Heart-Love Cat"><span>Heart-Love Cat</span></article>
+      <article class="card"><img src="../assets/mewo-omori.png" alt="Mewo from Omori"><span>Mewo from Omori</span></article>
+      <article class="card"><img src="../assets/white-sleeping-cat.png" alt="Sleeping White Cat"><span>Sleeping White Cat</span></article>
+      <article class="card"><img src="../assets/white-kitty.png" alt="White Kitty"><span>White Kitty</span></article>
+      <article class="card"><img src="../assets/bleh-cat.png" alt="Bleh Cat"><span>Bleh Cat</span></article>
+    </section>
+  </main>
+</body>
+</html>
