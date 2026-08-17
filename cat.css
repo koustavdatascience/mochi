@@ -1,9 +1,10 @@
 #desktop-cat-root {
-  position: fixed;
-  inset: 0;
-  z-index: 2147483647;
-  overflow: hidden;
-  pointer-events: none;
+  all: initial;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
   contain: layout style paint;
 }
 
@@ -12,16 +13,25 @@
 }
 
 #desktop-cat {
-  position: absolute;
-  width: 96px;
-  height: 96px;
-  object-fit: contain;
-  object-position: center;
-  pointer-events: auto;
-  cursor: grab;
-  touch-action: none;
-  user-select: none;
-  image-rendering: auto;
+  all: initial;
+  position: absolute !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 96px !important;
+  min-width: 96px !important;
+  max-width: 96px !important;
+  height: 96px !important;
+  min-height: 96px !important;
+  max-height: 96px !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+  cursor: grab !important;
+  touch-action: none !important;
+  user-select: none !important;
+  image-rendering: auto !important;
   will-change: transform;
 }
 
