@@ -184,7 +184,7 @@ This project is maintained as a small personal side project. Review the reposito
 
 ## Contact
 
-For questions, ideas, or feedback, open an [issue](https://github.com/koustavdatascience/mochi/issues) or visit [Koustav Roy’s GitHub profile](https://github.com/koustavdatascience).
+For questions, ideas, or feedback, open an [issue](https://github.com/koustavdatascience/mochi/issues), email [koustavdatascience@gmail.com](mailto:koustavdatascience@gmail.com), or visit [Koustav Roy’s GitHub profile](https://github.com/koustavdatascience).
 
 ---
 
