@@ -116,7 +116,7 @@ Small, focused contributions are welcome, especially new cat styles, accessibili
 
 ## Contact
 
-For feedback or issues, [open an issue](https://github.com/koustavdatascience/mochi/issues) email [koustavdatascience@gmail.com](mailto:koustavdatascience@gmail.com). 
+For feedback or issues, email [koustavdatascience@gmail.com](mailto:koustavdatascience@gmail.com). 
 ## License
 
 This is a personal side project. Review the repository before redistributing the extension or its bundled media assets.
