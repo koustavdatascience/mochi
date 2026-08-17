@@ -101,4 +101,3 @@ For feedback or issues, email [koustavdatascience@gmail.com](mailto:koustavdatas
 
 This is a personal side project. Review the repository before redistributing the extension or its bundled media assets.
 
-<p align="center"><strong>Mochi — small project, soft landing, one cat per tab :3</strong></p>
