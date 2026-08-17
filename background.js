@@ -1,21 +1,21 @@
 const SKIN_LABELS = Object.freeze({
-  badBoy: "Bad Boy Cat",
+  badBoy: "Bad Boy",
   blackCat: "Black Cat",
-  bttvRolling: "BTTV Rolling Cat",
-  littleCream: "Little Cream Cat",
-  greenFrog: "Green Frog Cat",
-  tinyCute: "Tiny Cute Cat",
-  scarfCat: "Cat in a Scarf",
-  blackCatRoll: "Black Cat Roll",
-  spinningBlue: "Spinning Blue Cat",
-  yawningWhite: "Yawning White Cat",
-  grayPixel: "Gray Pixel Cat",
-  blushingCute: "Blushing Cute Cat",
-  danceBreak: "Dance Break Cat",
-  blueMeme: "Blue Meme Cat",
-  heartLove: "Heart-Love Cat",
-  mewoOmori: "Mewo from Omori",
-  whiteSleeping: "Sleeping White Cat",
+  bttvRolling: "Rolling Cat",
+  littleCream: "Cream Cat",
+  greenFrog: "Frog Cat",
+  tinyCute: "Tiny Cat",
+  scarfCat: "Scarf Cat",
+  blackCatRoll: "Cat Roll",
+  spinningBlue: "Blue Spinner",
+  yawningWhite: "Yawning Cat",
+  grayPixel: "Pixel Cat",
+  blushingCute: "Blush Cat",
+  danceBreak: "Dancer",
+  blueMeme: "Meme Cat",
+  heartLove: "Love Cat",
+  mewoOmori: "Mewo",
+  whiteSleeping: "Sleepy Cat",
   whiteKitty: "White Kitty",
   blehCat: "Bleh Cat"
 });
@@ -58,6 +58,34 @@ async function persistAndBroadcast(nextState) {
       }).catch(() => undefined))
   );
 }
+
+function isEligibleTab(tab) {
+  const url = typeof tab.url === "string" ? tab.url : "";
+  return tab.id !== undefined && !/^(chrome|edge|about|devtools|view-source|chrome-extension):/i.test(url);
+}
+
+async function rehydrateTab(tabId) {
+  try {
+    await chrome.scripting.insertCSS({ target: { tabId }, files: ["cat.css"] });
+    await chrome.scripting.executeScript({ target: { tabId }, files: ["content.js"] });
+  } catch (_error) {
+    // Protected browser pages and tabs without host access are expected to reject injection.
+  }
+}
+
+async function rehydrateOpenTabs() {
+  await stateReady;
+  const tabs = await chrome.tabs.query({});
+  await Promise.all(tabs.filter(isEligibleTab).map((tab) => rehydrateTab(tab.id)));
+}
+
+chrome.runtime.onInstalled.addListener(() => {
+  rehydrateOpenTabs();
+});
+
+chrome.runtime.onStartup.addListener(() => {
+  rehydrateOpenTabs();
+});
 
 chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   if (!message?.type) {

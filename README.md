@@ -24,7 +24,7 @@ Mochi is intentionally small and a little unnecessary. It adds a bit of personal
 
 ![Mochi popup showcase](docs/screenshots/popup-showcase.png)
 
-The popup follows Mochi’s official black-and-white logo with a compact monochrome control panel, rounded cards, high-contrast toggles, and a small kawaii touch.
+The popup follows Mochi’s official black-and-white logo with a compact monochrome control panel, rounded cards, high-contrast toggles, and a small kawaii touch. When Mochi is updated or the browser starts, it also attempts to restore itself into already-open eligible tabs without requiring a manual page refresh.
 
 ![Mochi cat style gallery](docs/screenshots/cat-gallery.png)
 
@@ -34,7 +34,7 @@ Mochi currently includes **nineteen cat styles**, ranging from pixel-art compani
 
 | Feature | What it does |
 | --- | --- |
-| **Nineteen cat styles** | Choose the animation that matches your mood. Each style has an animated GIF and a matching PNG pause frame. |
+| **Nineteen cat styles** | Choose the animation that matches your mood. Each style has an animated GIF and a matching PNG pause frame, with short names that are easy to scan. |
 | **Cross-tab synchronization** | Your selected cat, visibility setting, and pause state are shared across eligible tabs. |
 | **Drag-and-drop positioning** | Move Mochi around the page and leave it wherever you like. |
 | **Pause mode** | Freeze the current cat when you need a quiet, still companion. |
@@ -73,7 +73,7 @@ Chrome’s unpacked-extension workflow is documented in the official extension d
 
 ### Updating a local installation
 
-Pull the latest changes, return to the extensions page, and click **Reload** on the Mochi card. A reload is needed after source files or assets change because the browser keeps the currently loaded extension bundle in memory.
+Pull the latest changes, return to the extensions page, and click **Reload** on the Mochi card. Mochi now attempts to restore itself into already-open eligible tabs after an extension update or browser startup. A normal page refresh is still useful when a site was already open before Mochi was first installed, or when a protected page has not granted the extension access yet.
 
 ## Using Mochi
 
@@ -91,27 +91,27 @@ The extension persists shared preferences with the browser’s local extension s
 
 ## Cat styles
 
-The current style inventory is listed below. Names are intentionally descriptive so the selector remains easy to understand even when the animation is small.
+The current style inventory is listed below. Names are intentionally short so the selector remains easy to scan even when the popup is compact.
 
 | Style | Asset stem |
 | --- | --- |
-| Bad Boy Cat | `bad-boy` |
+| Bad Boy | `bad-boy` |
 | Black Cat | `black-cat` |
-| BTTV Rolling Cat | `bttv-rolling-cat` |
-| Little Cream Cat | `little-cream-cat` |
-| Green Frog Cat | `green-frog-cat` |
-| Tiny Cute Cat | `tiny-cute-cat` |
-| Cat in a Scarf | `cat-in-a-scarf` |
-| Black Cat Roll | `black-cat-roll` |
-| Spinning Blue Cat | `spinning-blue-cat` |
-| Yawning White Cat | `yawning-white-cat` |
-| Gray Pixel Cat | `gray-pixel-cat` |
-| Blushing Cute Cat | `blushing-cute-cat` |
-| Dance Break Cat | `dance-break` |
-| Blue Meme Cat | `blue-meme-cat` |
-| Heart-Love Cat | `heart-love-cat` |
-| Mewo from Omori | `mewo-omori` |
-| Sleeping White Cat | `white-sleeping-cat` |
+| Rolling Cat | `bttv-rolling-cat` |
+| Cream Cat | `little-cream-cat` |
+| Frog Cat | `green-frog-cat` |
+| Tiny Cat | `tiny-cute-cat` |
+| Scarf Cat | `cat-in-a-scarf` |
+| Cat Roll | `black-cat-roll` |
+| Blue Spinner | `spinning-blue-cat` |
+| Yawning Cat | `yawning-white-cat` |
+| Pixel Cat | `gray-pixel-cat` |
+| Blush Cat | `blushing-cute-cat` |
+| Dancer | `dance-break` |
+| Meme Cat | `blue-meme-cat` |
+| Love Cat | `heart-love-cat` |
+| Mewo | `mewo-omori` |
+| Sleepy Cat | `white-sleeping-cat` |
 | White Kitty | `white-kitty` |
 | Bleh Cat | `bleh-cat` |
 
@@ -126,7 +126,7 @@ assets/<style>.png   # first-frame version used while paused
 
 Mochi targets Manifest V3-compatible Chromium browsers. The content script is configured for regular web pages, but browsers intentionally restrict extensions from injecting into browser-owned pages and other protected surfaces. Mochi therefore will not appear on pages such as `chrome://extensions`, the Chrome Web Store, or other restricted browser UI pages.
 
-The extension does not request host permissions beyond the content-script match pattern in the manifest. Its only explicit API permission is `storage`, which is used to synchronize Mochi’s local settings between the popup, background service worker, and eligible tabs.
+The extension uses `storage` for shared preferences and `scripting` plus `<all_urls>` host access to restore the same local content script into already-open eligible tabs after an extension update or browser startup. It does not fetch remote content or send page data anywhere. This recovery path avoids making users manually reload every page after Mochi is reloaded.
 
 ## Privacy
 

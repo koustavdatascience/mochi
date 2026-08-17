@@ -10,9 +10,10 @@ assert manifest["name"] == "Mochi"
 assert manifest["action"]["default_title"] == "Mochi"
 assert manifest["content_scripts"][0]["matches"] == ["<all_urls>"]
 assert "storage" in manifest["permissions"]
+assert "scripting" in manifest["permissions"]
 assert manifest["icons"]["128"] == "assets/mochi-icon-128.png"
 assert manifest["action"]["default_icon"]["32"] == "assets/mochi-icon-32.png"
-assert "host_permissions" not in manifest
+assert manifest["host_permissions"] == ["<all_urls>"]
 resources = manifest["web_accessible_resources"][0]["resources"]
 assert "assets/*.gif" in resources
 assert "assets/*.png" in resources
@@ -66,6 +67,9 @@ assert "XMLHttpRequest" not in source
 assert "desktop-cat:set-skin" in source
 assert "desktop-cat:get-shared-state" in source
 assert "desktop-cat:sync-state" in source
+assert "chrome.scripting" in source
+assert "rehydrateOpenTabs" in source
+assert "__mochiContentInitialized" in source
 assert "github.com/koustavdatascience" in source
 assert "id=\"cat-select\"" in source
 assert "requestAnimationFrame" not in source

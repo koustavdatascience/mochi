@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Mochi",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A tiny animated cat companion for your browser tabs.",
   "action": {
     "default_title": "Mochi",
@@ -19,7 +19,8 @@
     "48": "assets/mochi-icon-48.png",
     "128": "assets/mochi-icon-128.png"
   },
-  "permissions": ["storage"],
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   },

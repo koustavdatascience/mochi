@@ -1,27 +1,32 @@
 (() => {
+  if (window.__mochiContentInitialized) {
+    return;
+  }
+  window.__mochiContentInitialized = true;
+
   const ROOT_ID = "desktop-cat-root";
   const CAT_ID = "desktop-cat";
   const CAT_SIZE = 96;
   const MARGIN = 8;
 
   const SKINS = Object.freeze({
-    badBoy: { label: "Bad Boy Cat", file: "bad-boy" },
+    badBoy: { label: "Bad Boy", file: "bad-boy" },
     blackCat: { label: "Black Cat", file: "black-cat" },
-    bttvRolling: { label: "BTTV Rolling Cat", file: "bttv-rolling-cat" },
-    littleCream: { label: "Little Cream Cat", file: "little-cream-cat" },
-    greenFrog: { label: "Green Frog Cat", file: "green-frog-cat" },
-    tinyCute: { label: "Tiny Cute Cat", file: "tiny-cute-cat" },
-    scarfCat: { label: "Cat in a Scarf", file: "cat-in-a-scarf" },
-    blackCatRoll: { label: "Black Cat Roll", file: "black-cat-roll" },
-    spinningBlue: { label: "Spinning Blue Cat", file: "spinning-blue-cat" },
-    yawningWhite: { label: "Yawning White Cat", file: "yawning-white-cat" },
-    grayPixel: { label: "Gray Pixel Cat", file: "gray-pixel-cat" },
-    blushingCute: { label: "Blushing Cute Cat", file: "blushing-cute-cat" },
-    danceBreak: { label: "Dance Break Cat", file: "dance-break" },
-    blueMeme: { label: "Blue Meme Cat", file: "blue-meme-cat" },
-    heartLove: { label: "Heart-Love Cat", file: "heart-love-cat" },
-    mewoOmori: { label: "Mewo from Omori", file: "mewo-omori" },
-    whiteSleeping: { label: "Sleeping White Cat", file: "white-sleeping-cat" },
+    bttvRolling: { label: "Rolling Cat", file: "bttv-rolling-cat" },
+    littleCream: { label: "Cream Cat", file: "little-cream-cat" },
+    greenFrog: { label: "Frog Cat", file: "green-frog-cat" },
+    tinyCute: { label: "Tiny Cat", file: "tiny-cute-cat" },
+    scarfCat: { label: "Scarf Cat", file: "cat-in-a-scarf" },
+    blackCatRoll: { label: "Cat Roll", file: "black-cat-roll" },
+    spinningBlue: { label: "Blue Spinner", file: "spinning-blue-cat" },
+    yawningWhite: { label: "Yawning Cat", file: "yawning-white-cat" },
+    grayPixel: { label: "Pixel Cat", file: "gray-pixel-cat" },
+    blushingCute: { label: "Blush Cat", file: "blushing-cute-cat" },
+    danceBreak: { label: "Dancer", file: "dance-break" },
+    blueMeme: { label: "Meme Cat", file: "blue-meme-cat" },
+    heartLove: { label: "Love Cat", file: "heart-love-cat" },
+    mewoOmori: { label: "Mewo", file: "mewo-omori" },
+    whiteSleeping: { label: "Sleepy Cat", file: "white-sleeping-cat" },
     whiteKitty: { label: "White Kitty", file: "white-kitty" },
     blehCat: { label: "Bleh Cat", file: "bleh-cat" }
   });
