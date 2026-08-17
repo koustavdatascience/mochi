@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Desktop Cat</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="popup-header">
+        <img class="cat-mark" src="assets/desktop-cat.png" alt="Desktop Cat">
+        <div>
+          <h1>Desktop Cat</h1>
+          <p>Quiet company for your tabs.</p>
+        </div>
+      </header>
+
+      <section class="skin-picker" aria-label="Choose a cat">
+        <label for="cat-select">Cat style</label>
+        <select id="cat-select">
+          <option value="rollingBttv">Rolling Orange Cat</option>
+          <option value="calicoSit">Tiny Calico</option>
+          <option value="grayPixel">Gray Pixel Cat</option>
+          <option value="cuteSleeping">Cute Sleeping Cat</option>
+          <option value="scarfCat">Cat in a Scarf</option>
+          <option value="blackwhiteRoll">Black-and-White Roll</option>
+          <option value="yawningCalico">Yawning Calico</option>
+          <option value="roundCute">Round Cute Cat</option>
+          <option value="blueMeme">Blue Meme Cat</option>
+          <option value="mewo">Mewo</option>
+          <option value="lyingWhite">Lying White Cat</option>
+          <option value="whiteKitty">White Kitty</option>
+        </select>
+      </section>
+
+      <section class="controls" aria-label="Cat controls">
+        <label class="control-row" for="visibility-toggle">
+          <span>
+            <strong>Show cat</strong>
+            <small>Keep the cat visible across your tabs.</small>
+          </span>
+          <input id="visibility-toggle" type="checkbox">
+          <span class="switch" aria-hidden="true"></span>
+        </label>
+
+        <label class="control-row" for="pause-toggle">
+          <span>
+            <strong>Pause cat</strong>
+            <small>Freeze movement and animation everywhere.</small>
+          </span>
+          <input id="pause-toggle" type="checkbox">
+          <span class="switch" aria-hidden="true"></span>
+        </label>
+      </section>
+
+      <p id="status" class="status" role="status">Ready.</p>
+      <p class="credit">Built by <a href="https://www.instagram.com/kkoustavroy/" target="_blank" rel="noreferrer">Koustav Roy</a></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

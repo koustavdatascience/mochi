@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Desktop Cat",
+  "version": "0.3.0",
+  "description": "A small, calm animated cat that wanders across your browser pages.",
+  "action": {
+    "default_title": "Desktop Cat",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/desktop-cat-icon-16.png",
+      "32": "assets/desktop-cat-icon-32.png",
+      "48": "assets/desktop-cat-icon-48.png",
+      "128": "assets/desktop-cat-icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/desktop-cat-icon-16.png",
+    "32": "assets/desktop-cat-icon-32.png",
+    "48": "assets/desktop-cat-icon-48.png",
+    "128": "assets/desktop-cat-icon-128.png"
+  },
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["cat.css"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*.gif", "assets/*.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
