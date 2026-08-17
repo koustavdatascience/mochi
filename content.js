@@ -28,7 +28,8 @@
     mewoOmori: { label: "Mewo", file: "mewo-omori" },
     whiteSleeping: { label: "Sleepy Cat", file: "white-sleeping-cat" },
     whiteKitty: { label: "White Kitty", file: "white-kitty" },
-    blehCat: { label: "Bleh Cat", file: "bleh-cat" }
+    blehCat: { label: "Bleh Cat", file: "bleh-cat" },
+    paperHat: { label: "Paper Hat", file: "paper-hat" }
   });
 
   const state = {

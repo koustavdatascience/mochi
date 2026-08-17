@@ -40,7 +40,7 @@ cats = [
     "green-frog-cat", "tiny-cute-cat", "cat-in-a-scarf", "black-cat-roll",
     "spinning-blue-cat", "yawning-white-cat", "gray-pixel-cat", "blushing-cute-cat",
     "dance-break", "blue-meme-cat", "heart-love-cat", "mewo-omori",
-    "white-sleeping-cat", "white-kitty", "bleh-cat"
+    "white-sleeping-cat", "white-kitty", "bleh-cat", "paper-hat"
 ]
 for stem in cats:
     gif = root / "assets" / f"{stem}.gif"

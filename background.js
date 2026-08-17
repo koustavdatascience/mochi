@@ -17,7 +17,8 @@ const SKIN_LABELS = Object.freeze({
   mewoOmori: "Mewo",
   whiteSleeping: "Sleepy Cat",
   whiteKitty: "White Kitty",
-  blehCat: "Bleh Cat"
+  blehCat: "Bleh Cat",
+  paperHat: "Paper Hat"
 });
 
 const DEFAULT_STATE = Object.freeze({

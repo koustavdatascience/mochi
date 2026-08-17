@@ -58,10 +58,10 @@ The extension also attempts to recover into already-open eligible tabs after sta
 
 ## Cat styles
 
-Mochi includes **Bad Boy, Black Cat, Rolling Cat, Cream Cat, Frog Cat, Tiny Cat, Scarf Cat, Cat Roll, Blue Spinner, Yawning Cat, Pixel Cat, Blush Cat, Dancer, Meme Cat, Love Cat, Mewo, Sleepy Cat, White Kitty, and Bleh Cat**.
+Mochi includes **Bad Boy, Black Cat, Rolling Cat, Cream Cat, Frog Cat, Tiny Cat, Scarf Cat, Cat Roll, Blue Spinner, Yawning Cat, Pixel Cat, Blush Cat, Dancer, Meme Cat, Love Cat, Mewo, Sleepy Cat, White Kitty, Bleh Cat, and Paper Hat**.
 
 <p align="center">
-  <img src="docs/screenshots/cat-gallery.png" alt="Gallery of the 19 Mochi cat styles" width="900">
+  <img src="docs/screenshots/cat-gallery.png" alt="Gallery of the 20 Mochi cat styles" width="900">
 </p>
 
 ## Privacy and permissions
