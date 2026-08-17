@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mochi in action</title>
+  <style>
+    :root { --ink:#111; --paper:#f6f4f0; --pink:#ff7195; --lav:#dedaff; --muted:#6d6864; }
+    * { box-sizing:border-box; }
+    body { margin:0; width:1400px; height:860px; background:var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
+    .page { width:1170px; margin:54px auto; }
+    .top { display:flex; align-items:end; justify-content:space-between; margin-bottom:30px; }
+    .eyebrow { font-size:14px; letter-spacing:.2em; font-weight:900; }
+    h1 { margin:8px 0 0; max-width:650px; font-size:52px; line-height:.94; letter-spacing:-.07em; }
+    .note { width:320px; color:var(--muted); font-size:17px; line-height:1.45; text-align:right; }
+    .browser { position:relative; height:570px; overflow:hidden; border:3px solid var(--ink); border-radius:24px; background:#fff; box-shadow:10px 10px 0 var(--ink); }
+    .bar { height:53px; display:flex; align-items:center; gap:9px; padding:0 18px; border-bottom:2px solid var(--ink); background:#fafafa; }
+    .dot { width:12px; height:12px; border:2px solid var(--ink); border-radius:50%; }
+    .dot.pink { background:var(--pink); }
+    .dot.lav { background:var(--lav); }
+    .url { flex:1; margin-left:11px; padding:8px 13px; border-radius:10px; background:#f0eeeb; color:var(--muted); font-size:13px; }
+    .page-content { position:relative; height:517px; padding:44px 50px; background:linear-gradient(135deg,#fffdf8 0%,#e9e4ff 55%,#ffdce7 100%); }
+    .kicker { color:var(--muted); font-size:14px; letter-spacing:.16em; font-weight:900; }
+    h2 { max-width:450px; margin:13px 0 13px; font-size:48px; line-height:.98; letter-spacing:-.07em; }
+    .copy { max-width:420px; color:#6d6864; font-size:17px; line-height:1.45; }
+    .card { width:420px; height:128px; margin-top:38px; padding:24px; border:2px solid rgba(17,17,17,.12); border-radius:18px; background:rgba(255,255,255,.55); }
+    .line { width:190px; height:10px; margin-bottom:13px; border-radius:999px; background:#dedbd8; }
+    .line.short { width:130px; }
+    .cat { position:absolute; right:46px; bottom:27px; width:96px; height:96px; object-fit:contain; filter:drop-shadow(0 9px 0 rgba(0,0,0,.16)); }
+    .callout { position:absolute; right:33px; bottom:158px; padding:10px 15px; border:2px solid var(--ink); border-radius:999px; background:var(--pink); font-size:14px; font-weight:900; }
+    .arrow { position:absolute; right:128px; bottom:151px; width:76px; height:3px; background:var(--ink); transform:rotate(34deg); transform-origin:left center; }
+    .arrow:after { content:""; position:absolute; right:-2px; top:50%; width:12px; height:12px; border-right:3px solid var(--ink); border-bottom:3px solid var(--ink); transform:translateY(-50%) rotate(-45deg); }
+    .popup { position:absolute; right:38px; top:80px; width:265px; padding:15px; border:3px solid var(--ink); border-radius:20px; background:#f7f6f3; box-shadow:7px 7px 0 var(--ink); }
+    .popup-head { display:flex; align-items:center; gap:10px; padding:11px; border-radius:14px; background:#111; color:#fff; }
+    .logo { width:36px; height:36px; border-radius:10px; background:#fff; object-fit:cover; }
+    .popup-title { font-size:17px; font-weight:900; }
+    .popup-sub { color:#cfcfcf; font-size:11px; }
+    .select { margin-top:13px; padding:12px; border:1px solid #bbb; border-radius:12px; background:#fff; font-size:13px; }
+    .toggle-row { display:flex; justify-content:space-between; align-items:center; margin-top:9px; padding:13px; border:1px solid #ddd; border-radius:12px; background:#fff; font-size:13px; font-weight:800; }
+    .toggle { width:33px; height:19px; border-radius:999px; background:#111; }
+    .toggle:after { content:""; display:block; width:13px; height:13px; margin:3px 3px 3px 17px; border-radius:50%; background:#fff; }
+    .footer { margin-top:25px; text-align:center; font-size:18px; font-weight:900; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="top">
+      <div><div class="eyebrow">A SMALL CAT / A LITTLE COMPANY</div><h1>Mochi lives where you browse.</h1></div>
+      <div class="note">A tiny companion on the page, with simple controls that stay out of the way.</div>
+    </div>
+    <section class="browser">
+      <div class="bar"><span class="dot pink"></span><span class="dot lav"></span><span class="dot"></span><div class="url">your favorite corner of the internet</div></div>
+      <div class="page-content">
+        <div class="kicker">A QUIET LITTLE COMPANION</div>
+        <h2>Make the browser feel a little more yours.</h2>
+        <div class="copy">Pick a cat, drag it into a corner, and keep it there while you move between eligible tabs.</div>
+        <div class="card"><div class="line"></div><div class="line"></div><div class="line short"></div></div>
+        <span class="callout">Mochi stays here :3</span><span class="arrow"></span>
+        <img class="cat" src="../assets/black-cat.png" alt="Mochi black cat">
+        <aside class="popup">
+          <div class="popup-head"><img class="logo" src="../assets/mochi-logo.png" alt="Mochi logo"><div><div class="popup-title">Mochi</div><div class="popup-sub">Quiet company for your tabs</div></div></div>
+          <div class="select">Black Cat <span style="float:right">⌄</span></div>
+          <div class="toggle-row"><span>Show cat</span><span class="toggle"></span></div>
+          <div class="toggle-row"><span>Pause cat</span><span class="toggle" style="background:#d5d5d5"></span></div>
+        </aside>
+      </div>
+    </section>
+    <div class="footer">Small project. Soft landing. One cat per tab.</div>
+  </main>
+</body>
+</html>
