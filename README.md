@@ -6,7 +6,7 @@ Mochi is a small, offline-first Manifest V3 extension that places a tiny animate
 
 ## Features
 
-Mochi includes twelve cat styles, draggable positioning, global visibility and pause controls, and shared preferences that stay synchronized across eligible tabs. The popup uses a soft, kawaii-inspired solid UI with the supplied cat artwork as its icon and header image.
+Mochi includes nineteen cat styles, draggable positioning, global visibility and pause controls, and shared preferences that stay synchronized across eligible tabs. The popup uses a soft, kawaii-inspired solid UI with the supplied cat artwork as its icon and header image.
 
 The extension uses each supplied animated GIF as a looping asset and its matching PNG as the paused frame. JavaScript swaps assets and moves the cat without using animation loops that consume unnecessary page resources.
 
@@ -35,7 +35,7 @@ python3 verify_extension.py
 
 ## Cat styles
 
-The popup includes twelve individual options: Rolling Orange Cat, Tiny Calico, Gray Pixel Cat, Cute Sleeping Cat, Cat in a Scarf, Black-and-White Roll, Yawning Calico, Round Cute Cat, Blue Meme Cat, Mewo, Lying White Cat, and White Kitty.
+The popup includes nineteen individual options: Bad Boy Cat, Black Cat, BTTV Rolling Cat, Little Cream Cat, Green Frog Cat, Tiny Cute Cat, Cat in a Scarf, Black Cat Roll, Spinning Blue Cat, Yawning White Cat, Gray Pixel Cat, Blushing Cute Cat, Dance Break Cat, Blue Meme Cat, Heart-Love Cat, Mewo from Omori, Sleeping White Cat, White Kitty, and Bleh Cat.
 
 ## Maker
 

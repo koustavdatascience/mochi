@@ -29,7 +29,7 @@ function renderState(current) {
 
   visibilityToggle.checked = Boolean(current.visible);
   pauseToggle.checked = Boolean(current.paused);
-  catSelect.value = current.skin || "rollingBttv";
+  catSelect.value = current.skin || "bttvRolling";
   setStatus(current.paused ? `Paused · ${current.skinLabel || "Cat"}.` : `${current.skinLabel || "Cat"} wandering.`);
 }
 

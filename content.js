@@ -5,22 +5,29 @@
   const MARGIN = 8;
 
   const SKINS = Object.freeze({
-    rollingBttv: { label: "Rolling Orange Cat", file: "rolling-bttv" },
-    calicoSit: { label: "Tiny Calico", file: "calico-sit" },
-    grayPixel: { label: "Gray Pixel Cat", file: "gray-pixel" },
-    cuteSleeping: { label: "Cute Sleeping Cat", file: "cute-sleeping" },
-    scarfCat: { label: "Cat in a Scarf", file: "scarf-cat" },
-    blackwhiteRoll: { label: "Black-and-White Roll", file: "blackwhite-roll" },
-    yawningCalico: { label: "Yawning Calico", file: "yawning-calico" },
-    roundCute: { label: "Round Cute Cat", file: "round-cute" },
-    blueMeme: { label: "Blue Meme Cat", file: "blue-meme" },
-    mewo: { label: "Mewo", file: "mewo" },
-    lyingWhite: { label: "Lying White Cat", file: "lying-white" },
-    whiteKitty: { label: "White Kitty", file: "white-kitty" }
+    badBoy: { label: "Bad Boy Cat", file: "bad-boy" },
+    blackCat: { label: "Black Cat", file: "black-cat" },
+    bttvRolling: { label: "BTTV Rolling Cat", file: "bttv-rolling-cat" },
+    littleCream: { label: "Little Cream Cat", file: "little-cream-cat" },
+    greenFrog: { label: "Green Frog Cat", file: "green-frog-cat" },
+    tinyCute: { label: "Tiny Cute Cat", file: "tiny-cute-cat" },
+    scarfCat: { label: "Cat in a Scarf", file: "cat-in-a-scarf" },
+    blackCatRoll: { label: "Black Cat Roll", file: "black-cat-roll" },
+    spinningBlue: { label: "Spinning Blue Cat", file: "spinning-blue-cat" },
+    yawningWhite: { label: "Yawning White Cat", file: "yawning-white-cat" },
+    grayPixel: { label: "Gray Pixel Cat", file: "gray-pixel-cat" },
+    blushingCute: { label: "Blushing Cute Cat", file: "blushing-cute-cat" },
+    danceBreak: { label: "Dance Break Cat", file: "dance-break" },
+    blueMeme: { label: "Blue Meme Cat", file: "blue-meme-cat" },
+    heartLove: { label: "Heart-Love Cat", file: "heart-love-cat" },
+    mewoOmori: { label: "Mewo from Omori", file: "mewo-omori" },
+    whiteSleeping: { label: "Sleeping White Cat", file: "white-sleeping-cat" },
+    whiteKitty: { label: "White Kitty", file: "white-kitty" },
+    blehCat: { label: "Bleh Cat", file: "bleh-cat" }
   });
 
   const state = {
-    skin: "rollingBttv",
+    skin: "bttvRolling",
     x: Math.max(MARGIN, window.innerWidth - CAT_SIZE - 48),
     y: Math.max(MARGIN, window.innerHeight - CAT_SIZE - 12),
     visible: true,

@@ -1,20 +1,27 @@
 const SKIN_LABELS = Object.freeze({
-  rollingBttv: "Rolling Orange Cat",
-  calicoSit: "Tiny Calico",
-  grayPixel: "Gray Pixel Cat",
-  cuteSleeping: "Cute Sleeping Cat",
+  badBoy: "Bad Boy Cat",
+  blackCat: "Black Cat",
+  bttvRolling: "BTTV Rolling Cat",
+  littleCream: "Little Cream Cat",
+  greenFrog: "Green Frog Cat",
+  tinyCute: "Tiny Cute Cat",
   scarfCat: "Cat in a Scarf",
-  blackwhiteRoll: "Black-and-White Roll",
-  yawningCalico: "Yawning Calico",
-  roundCute: "Round Cute Cat",
+  blackCatRoll: "Black Cat Roll",
+  spinningBlue: "Spinning Blue Cat",
+  yawningWhite: "Yawning White Cat",
+  grayPixel: "Gray Pixel Cat",
+  blushingCute: "Blushing Cute Cat",
+  danceBreak: "Dance Break Cat",
   blueMeme: "Blue Meme Cat",
-  mewo: "Mewo",
-  lyingWhite: "Lying White Cat",
-  whiteKitty: "White Kitty"
+  heartLove: "Heart-Love Cat",
+  mewoOmori: "Mewo from Omori",
+  whiteSleeping: "Sleeping White Cat",
+  whiteKitty: "White Kitty",
+  blehCat: "Bleh Cat"
 });
 
 const DEFAULT_STATE = Object.freeze({
-  skin: "rollingBttv",
+  skin: "bttvRolling",
   visible: true,
   paused: false
 });
@@ -22,7 +29,7 @@ const DEFAULT_STATE = Object.freeze({
 let sharedState = { ...DEFAULT_STATE };
 const stateReady = chrome.storage.local.get(DEFAULT_STATE).then((stored) => {
   sharedState = {
-    skin: typeof stored.skin === "string" ? stored.skin : DEFAULT_STATE.skin,
+    skin: typeof stored.skin === "string" && SKIN_LABELS[stored.skin] ? stored.skin : DEFAULT_STATE.skin,
     visible: typeof stored.visible === "boolean" ? stored.visible : DEFAULT_STATE.visible,
     paused: typeof stored.paused === "boolean" ? stored.paused : DEFAULT_STATE.paused
   };
@@ -32,7 +39,7 @@ const stateReady = chrome.storage.local.get(DEFAULT_STATE).then((stored) => {
 function responseState(extra = {}) {
   return {
     ...sharedState,
-    skinLabel: SKIN_LABELS[sharedState.skin] || SKIN_LABELS.rollingBttv,
+    skinLabel: SKIN_LABELS[sharedState.skin] || SKIN_LABELS.bttvRolling,
     ...extra
   };
 }

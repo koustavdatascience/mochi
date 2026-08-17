@@ -35,9 +35,11 @@ for relative in required_runtime:
     assert (root / relative).exists(), relative
 
 cats = [
-    "rolling-bttv", "calico-sit", "gray-pixel", "cute-sleeping",
-    "scarf-cat", "blackwhite-roll", "yawning-calico", "round-cute",
-    "blue-meme", "mewo", "lying-white", "white-kitty"
+    "bad-boy", "black-cat", "bttv-rolling-cat", "little-cream-cat",
+    "green-frog-cat", "tiny-cute-cat", "cat-in-a-scarf", "black-cat-roll",
+    "spinning-blue-cat", "yawning-white-cat", "gray-pixel-cat", "blushing-cute-cat",
+    "dance-break", "blue-meme-cat", "heart-love-cat", "mewo-omori",
+    "white-sleeping-cat", "white-kitty", "bleh-cat"
 ]
 for stem in cats:
     gif = root / "assets" / f"{stem}.gif"
@@ -76,4 +78,4 @@ assert "translate3d" in source
 assert source.count('file: "') == len(cats)
 assert source.count('<option value=') == len(cats)
 
-print(f"Mochi 12-cat checks passed: {len(cats)} GIFs and {len(cats)} pause frames.")
+print(f"Mochi {len(cats)}-cat checks passed: {len(cats)} GIFs and {len(cats)} pause frames.")
