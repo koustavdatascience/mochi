@@ -29,14 +29,6 @@ Mochi is a lightweight Chromium extension that places a tiny animated cat on the
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/popup-showcase.png" alt="Mochi popup controls" width="560">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/position-showcase.png" alt="Mochi keeping the same position across two browser tabs" width="560">
-</p>
-
-<p align="center">
   <img src="docs/screenshots/feature-strip.png" alt="Mochi feature overview" width="760">
 </p>
 
