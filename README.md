@@ -32,9 +32,11 @@ Mochi is a lightweight Chromium extension that places a tiny animated cat on the
 </p>
 
 <p align="center">
-  
+  <img src="docs/screenshots/mochi-card-banner.png" alt="Borderless Mochi banner with different cat styles" width="760">
+</p>
+
+<p align="center">
   <img src="docs/screenshots/feature-strip.png" alt="Mochi feature overview" width="760">
-  
 </p>
 
 ## Quick start
