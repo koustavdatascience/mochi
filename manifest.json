@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Desktop Cat",
+  "name": "Mochi",
   "version": "0.3.0",
-  "description": "A small, calm animated cat that wanders across your browser pages.",
+  "description": "A tiny animated cat companion for your browser tabs.",
   "action": {
-    "default_title": "Desktop Cat",
+    "default_title": "Mochi",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "assets/desktop-cat-icon-16.png",

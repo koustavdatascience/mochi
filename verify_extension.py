@@ -6,6 +6,8 @@ from pathlib import Path
 root = Path(__file__).parent
 manifest = json.loads((root / "manifest.json").read_text())
 assert manifest["manifest_version"] == 3
+assert manifest["name"] == "Mochi"
+assert manifest["action"]["default_title"] == "Mochi"
 assert manifest["content_scripts"][0]["matches"] == ["<all_urls>"]
 assert "storage" in manifest["permissions"]
 assert manifest["icons"]["128"] == "assets/desktop-cat-icon-128.png"
@@ -62,7 +64,7 @@ assert "XMLHttpRequest" not in source
 assert "desktop-cat:set-skin" in source
 assert "desktop-cat:get-shared-state" in source
 assert "desktop-cat:sync-state" in source
-assert "kkoustavroy" in source
+assert "github.com/koustavdatascience" in source
 assert "id=\"cat-select\"" in source
 assert "requestAnimationFrame" not in source
 assert "moveTowardTarget" not in source
@@ -74,4 +76,4 @@ assert "translate3d" in source
 assert source.count('file: "') == len(cats)
 assert source.count('<option value=') == len(cats)
 
-print(f"Desktop Cat 12-cat checks passed: {len(cats)} GIFs and {len(cats)} pause frames.")
+print(f"Mochi 12-cat checks passed: {len(cats)} GIFs and {len(cats)} pause frames.")
