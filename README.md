@@ -4,10 +4,12 @@
   <img src="assets/mochi-logo.png" alt="Mochi official black cat logo" width="150">
 </p>
 
-<h3 align="center">A tiny cat for every browser tab.</h3>
+<p align="center">
+  <strong>A tiny cat for every browser tab :3</strong>
+</p>
 
 <p align="center">
-  Mochi is a small, offline-first Manifest V3 browser extension that lets an animated cat keep you company while you work, study, or browse.
+  A small, local-first browser companion for people who like their digital spaces to feel a little more personal.
 </p>
 
 <p align="center">
@@ -16,146 +18,143 @@
   <a href="https://github.com/koustavdatascience">Made by Koustav Roy</a>
 </p>
 
-> Your tabs looked a little lonely. Mochi came to hang out :3
+<p align="center">
+  <img src="docs/screenshots/brand-showcase.png" alt="Mochi brand showcase" width="560">
+  <img src="docs/screenshots/popup-showcase.png" alt="Mochi popup controls" width="560">
+</p>
 
-## Showcase
+> Your tabs looked a little lonely. Mochi came to hang out.
 
-Mochi is intentionally small and a little unnecessary. It adds a bit of personality to the browser without introducing feeds, notifications, accounts, or visual clutter.
+## Quick Start
 
-![Mochi popup showcase](docs/screenshots/popup-showcase.png)
+1. Clone or download this repository.
+2. Open `chrome://extensions/` in Chrome or Chromium, or `edge://extensions/` in Microsoft Edge.
+3. Enable **Developer mode**.
+4. Click **Load unpacked** and select the folder that contains `manifest.json`.
+5. Open a normal website and click the Mochi icon in your toolbar.
 
-The popup follows Mochi’s official black-and-white logo with a compact monochrome control panel, rounded cards, high-contrast toggles, and a small kawaii touch. When Mochi is updated or the browser starts, it also attempts to restore itself into already-open eligible tabs without requiring a manual page refresh.
+That’s it. Pick a cat, click **Show cat**, and Mochi will try to join the current eligible page without a manual refresh.
 
-![Mochi cat style gallery](docs/screenshots/cat-gallery.png)
+## Demo
 
-Mochi currently includes **nineteen cat styles**, ranging from pixel-art companions and sleepy cats to a scarf-wearing cat, a rolling cat, a dance-break cat, and Mewo from *OMORI*.
+<p align="center">
+  <img src="docs/screenshots/position-showcase.png" alt="Mochi staying in the same position across two browser tabs" width="760">
+</p>
 
-## Features
+<p align="center">
+  <img src="docs/screenshots/feature-strip.png" alt="Mochi feature overview" width="760">
+</p>
 
-| Feature | What it does |
-| --- | --- |
-| **Nineteen cat styles** | Choose the animation that matches your mood. Each style has an animated GIF and a matching PNG pause frame, with short names that are easy to scan. |
-| **Cross-tab synchronization** | Your selected cat, visibility setting, pause state, and position are shared across eligible tabs. |
-| **Drag-and-drop positioning** | Move Mochi around the page and leave it wherever you like; the position is stored as a normalized viewport placement so it stays consistent across tabs and screen sizes. |
-| **Pause mode** | Freeze the current cat when you need a quiet, still companion. |
-| **Global visibility control** | Show or hide Mochi across all eligible tabs from the popup. Turning it on also attempts to inject Mochi into the current eligible tab immediately. |
-| **Offline-first behavior** | The extension ships its assets locally and does not require an account or network connection. |
-| **Official Mochi branding** | The supplied black cat mark is used in the popup, toolbar icon, extension listing icon, and README. |
+## What is Mochi?
+
+Mochi lets you place a small animated cat directly on the pages you browse. Like a tiny desk companion, it stays quietly in the corner while you work, study, watch, or wander around the web.
+
+**What you can do:**
+
+- Choose from nineteen small cat personalities.
+- Drag Mochi anywhere on the visible page.
+- Keep the same cat and position across eligible tabs.
+- Show or hide Mochi everywhere from one popup control.
+- Bring Mochi into the current page by clicking **Show cat**.
+- Pause movement and animation whenever you need to focus.
+- Use the extension without an account, feed, analytics, or network connection.
+
+<img src="docs/screenshots/cat-gallery.png" alt="Gallery of nineteen Mochi cat styles" width="900">
+
+## Designed to stay out of your way :3
+
+Mochi is intentionally small and a little unnecessary. It does not try to turn browsing into a productivity dashboard. There are no tasks, reminders, notifications, social features, or busy settings pages.
+
+Drag the cat once and its position is saved as a normalized viewport placement. When you switch to another eligible tab, Mochi keeps the same relative spot even if the page has a different layout or viewport size. The popup’s **Show cat** control also attempts to inject Mochi into the active eligible tab directly.
+
+## Privacy-first by design
+
+Mochi does not require an account or sign-up. It does not include analytics, advertising, tracking pixels, remote APIs, or a server-side data store. The logo, cat animations, paused frames, popup, and extension logic are shipped locally in this repository.
+
+Only the small set of preferences needed to keep Mochi consistent is stored in the browser’s local extension storage. The project has no reason to upload page content, images, or browsing history.
+
+## Who it’s for
+
+Mochi is made for remote workers, students, developers, digital desk decorators, and anyone who wants their browser to feel a little less sterile. It is lightweight, free to use, and deliberately not very serious.
 
 ## Installation
 
-Mochi is currently installed locally as an unpacked extension. This is useful for personal use, development, and trying the project before a browser-store release.
+### From source
 
-### Chrome or Chromium-based browsers
+Clone the repository:
 
-1. Clone the repository:
+```bash
+git clone https://github.com/koustavdatascience/mochi.git
+cd mochi
+```
 
-   ```bash
-   git clone https://github.com/koustavdatascience/mochi.git
-   cd mochi
-   ```
+Then load it in a Chromium-based browser:
 
-2. Open the extensions page by visiting [`chrome://extensions`](chrome://extensions) in Chrome or Chromium.
-3. Enable **Developer mode**.
-4. Select **Load unpacked**.
-5. Choose the cloned `mochi` directory.
-6. Open a normal website. Mochi should appear near the lower edge of the page.
+- Open [`chrome://extensions`](chrome://extensions), [`edge://extensions`](edge://extensions), or the equivalent extensions page.
+- Enable **Developer mode**.
+- Click **Load unpacked**.
+- Select the `mochi` directory directly — the selected folder must contain `manifest.json`.
+- Open a regular website and click Mochi’s toolbar icon.
 
-Chrome’s unpacked-extension workflow is documented in the official extension development guide.[1]
+Chrome’s unpacked-extension workflow is described in the official extension guide.[1] Microsoft Edge provides a similar local-loading workflow.[3]
 
-### Microsoft Edge
+### Updating
 
-1. Clone or download this repository.
-2. Visit [`edge://extensions`](edge://extensions).
-3. Enable **Developer mode**.
-4. Select **Load unpacked**.
-5. Choose the repository directory.
+Pull the latest changes and click **Reload** on the Mochi card in the extensions page. Mochi attempts to restore itself into already-open eligible tabs after an update or browser startup. A page refresh may still be needed for a page that was open before the extension was first installed or for a protected page that has not granted access.
 
-### Updating a local installation
+## Usage
 
-Pull the latest changes, return to the extensions page, and click **Reload** on the Mochi card. Mochi now attempts to restore itself into already-open eligible tabs after an extension update or browser startup. A normal page refresh is still useful when a site was already open before Mochi was first installed, or when a protected page has not granted the extension access yet.
+### Choosing a cat
 
-## Using Mochi
+Open the Mochi popup and select one of the nineteen styles. The selected style is shared across eligible tabs.
 
-After installation, open the extension popup from the browser toolbar. The popup contains three controls:
+### Showing or hiding Mochi
 
-| Control | Behavior |
-| --- | --- |
-| **Cat style** | Select one of the nineteen available companions. The selected style is applied to every eligible tab. |
-| **Show cat** | Toggle Mochi’s visibility across eligible tabs. Turning it on actively injects Mochi into the current eligible tab, so a page refresh is usually unnecessary. |
-| **Pause cat** | Freeze or resume the cat’s movement and animation everywhere. |
+Use **Show cat** to toggle visibility everywhere. When switched on, Mochi also asks the current eligible tab to inject the cat immediately, so you normally do not need to refresh that page.
 
-Mochi can be dragged directly on the page. Its position is clamped to the visible viewport and saved as a normalized placement, so the cat stays in the same relative spot when you switch to another tab or open a page with a different viewport size. Turning **Show cat** on from the popup also asks the current eligible tab to inject Mochi immediately.
+### Moving Mochi
 
-The extension persists shared preferences with the browser’s local extension storage. If an older installation contains a style that is no longer available, Mochi automatically falls back to the current default style rather than leaving a tab without a valid asset.
+Click and drag the cat on the page. Its normalized position is saved and broadcast to other eligible tabs, keeping Mochi in the same relative place as you browse.
+
+### Pausing Mochi
+
+Use **Pause cat** to freeze the current frame and stop movement. The pause state is shared across eligible tabs as well.
 
 ## Cat styles
 
-The current style inventory is listed below. Names are intentionally short so the selector remains easy to scan even when the popup is compact.
+Mochi currently includes **Bad Boy, Black Cat, Rolling Cat, Cream Cat, Frog Cat, Tiny Cat, Scarf Cat, Cat Roll, Blue Spinner, Yawning Cat, Pixel Cat, Blush Cat, Dancer, Meme Cat, Love Cat, Mewo, Sleepy Cat, White Kitty, and Bleh Cat**.
 
-| Style | Asset stem |
-| --- | --- |
-| Bad Boy | `bad-boy` |
-| Black Cat | `black-cat` |
-| Rolling Cat | `bttv-rolling-cat` |
-| Cream Cat | `little-cream-cat` |
-| Frog Cat | `green-frog-cat` |
-| Tiny Cat | `tiny-cute-cat` |
-| Scarf Cat | `cat-in-a-scarf` |
-| Cat Roll | `black-cat-roll` |
-| Blue Spinner | `spinning-blue-cat` |
-| Yawning Cat | `yawning-white-cat` |
-| Pixel Cat | `gray-pixel-cat` |
-| Blush Cat | `blushing-cute-cat` |
-| Dancer | `dance-break` |
-| Meme Cat | `blue-meme-cat` |
-| Love Cat | `heart-love-cat` |
-| Mewo | `mewo-omori` |
-| Sleepy Cat | `white-sleeping-cat` |
-| White Kitty | `white-kitty` |
-| Bleh Cat | `bleh-cat` |
-
-Each style uses two local files:
+Every style includes a local animated GIF and a matching paused PNG frame:
 
 ```text
 assets/<style>.gif   # animated version
-assets/<style>.png   # first-frame version used while paused
+assets/<style>.png   # paused first-frame version
 ```
 
-## Browser compatibility and limitations
+## Browser limitations
 
-Mochi targets Manifest V3-compatible Chromium browsers. The content script is configured for regular web pages, but browsers intentionally restrict extensions from injecting into browser-owned pages and other protected surfaces. Mochi therefore will not appear on pages such as `chrome://extensions`, the Chrome Web Store, or other restricted browser UI pages.
+Mochi targets Manifest V3-compatible Chromium browsers and regular web pages. Browsers intentionally restrict extensions from injecting into their own protected surfaces, so Mochi will not appear on pages such as `chrome://extensions`, the Chrome Web Store, or other browser-owned UI pages.
 
-The extension uses `storage` for shared preferences and `scripting` plus `<all_urls>` host access to restore the same local content script into already-open eligible tabs after an extension update or browser startup. It does not fetch remote content or send page data anywhere. This recovery path avoids making users manually reload every page after Mochi is reloaded.
-
-## Privacy
-
-Mochi is designed as a local-only project. It does not include an account system, analytics, advertising, remote API calls, tracking pixels, or a server-side data store. The cat animations, logo, popup, and extension logic are shipped in the repository itself. The only persisted information is the small set of local preferences required to keep the experience consistent.
-
-Because this README describes the current source tree rather than a hosted service, users should still review the code and manifest before installing any local extension. The repository is intentionally small enough to inspect directly.
+The extension uses local storage for preferences and the `scripting` capability plus host access to recover Mochi in already-open eligible tabs. It does not fetch remote content.
 
 ## Development
 
-Mochi does not require a build framework or package manager. The repository is a plain Manifest V3 extension made from HTML, CSS, JavaScript, and local image assets.
+Mochi is a plain Manifest V3 extension made from HTML, CSS, JavaScript, and local image assets. It does not require a build framework or package manager.
 
-### Repository layout
+```text
+manifest.json          extension metadata and permissions
+background.js          shared state, storage, and tab recovery
+content.js             on-page cat, dragging, injection guard, and sync
+cat.css                on-page cat styling
+popup.html              popup structure and controls
+popup.css               monochrome Mochi popup styling
+popup.js                popup events and background messaging
+assets/                 logo, icons, GIFs, and paused PNG frames
+docs/screenshots/       README showcase images
+verify_extension.py     local consistency checks
+```
 
-| Path | Purpose |
-| --- | --- |
-| `manifest.json` | Extension metadata, popup wiring, icon declarations, permissions, and content-script registration. |
-| `background.js` | Shared state manager that persists settings and broadcasts them across tabs. |
-| `content.js` | Creates the on-page cat, handles dragging, and consumes synchronized state. |
-| `cat.css` | Keeps the on-page cat above page content and defines its appearance and transitions. |
-| `popup.html` | Popup structure, controls, official logo, and maker credit. |
-| `popup.css` | Mochi’s monochrome popup styling. |
-| `popup.js` | Popup event handling and communication with the background service worker. |
-| `assets/` | Logo files, extension icons, animated GIFs, and paused PNG frames. |
-| `verify_extension.py` | Lightweight repository checks for manifest, branding, assets, and source consistency. |
-| `docs/screenshots/` | README showcase screenshots generated from the current UI and asset set. |
-
-### Local verification
-
-Run these commands from the repository root before opening a pull request:
+Run the local checks before opening a pull request:
 
 ```bash
 node --check content.js
@@ -164,28 +163,32 @@ node --check background.js
 python3 verify_extension.py
 ```
 
-The verification script checks the Manifest V3 configuration, official Mochi logo paths, the complete nineteen-style inventory, matching GIF and PNG assets, shared-state code paths, and popup option counts.
-
-### Packaging a local ZIP
-
-To create a ZIP that can be archived or shared with another developer, run:
+To package the extension for local sharing:
 
 ```bash
 zip -qr ../Mochi-extension.zip . -x '.git/*'
 unzip -tq ../Mochi-extension.zip
 ```
 
-The ZIP is intended for local unpacking or development workflows. Browser stores may require additional listing, review, and packaging requirements beyond this repository.
+The repository also contains the HTML sources used to create the showcase images in `docs/`. They can be rerendered with a Chromium headless screenshot workflow when the UI changes.
 
 ## Contributing
 
-Small improvements are welcome, especially new cat styles, accessibility refinements, browser-compatibility fixes, and documentation improvements. Please keep contributions focused and preserve Mochi’s lightweight, local-first behavior.
+Small improvements are welcome, especially new cat styles, accessibility refinements, browser-compatibility fixes, UI polish, and documentation improvements. Please keep contributions focused and preserve Mochi’s lightweight, local-first character.
 
-Before opening a pull request, verify that the extension still loads through **Load unpacked**, that the popup controls work across more than one eligible tab, and that all local checks pass. New cat styles should include both an animated `.gif` file and a paused `.png` frame, plus matching entries in `content.js`, `background.js`, `popup.html`, `README.md`, and `verify_extension.py`.
+New cat styles should include both an animated `.gif` and a paused `.png` frame, plus matching entries in `content.js`, `background.js`, `popup.html`, `README.md`, and `verify_extension.py`.
 
-## Credits
+## License
 
-Mochi is made by [Koustav Roy](https://github.com/koustavdatascience). The official project logo is stored at [`assets/mochi-logo.png`](assets/mochi-logo.png), and the extension icon sizes are generated from the same mark.
+This project is maintained as a small personal side project. Review the repository before redistributing it or its bundled media assets.
+
+## Contact
+
+For questions, ideas, or feedback, open an [issue](https://github.com/koustavdatascience/mochi/issues) or visit [Koustav Roy’s GitHub profile](https://github.com/koustavdatascience).
+
+---
+
+**Mochi — make your browsing space feel a little more alive :3**
 
 ## References
 

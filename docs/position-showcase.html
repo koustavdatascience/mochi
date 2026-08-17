@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mochi position showcase</title>
+  <style>
+    :root { --ink:#111; --paper:#f6f4f0; --muted:#726c67; --pink:#ff7195; --lav:#ddd8ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; width:1400px; height:860px; background:var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
+    .page { width:1170px; margin:55px auto; }
+    .top { display:flex; justify-content:space-between; align-items:end; margin-bottom:30px; }
+    .eyebrow { font-size:14px; letter-spacing:.2em; font-weight:900; }
+    h1 { font-size:48px; letter-spacing:-.06em; margin:8px 0 0; }
+    .note { max-width:400px; color:var(--muted); font-size:17px; line-height:1.45; text-align:right; }
+    .tabs { display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+    .browser { border:3px solid var(--ink); border-radius:24px; overflow:hidden; background:#fff; box-shadow:10px 10px 0 var(--ink); }
+    .bar { height:53px; border-bottom:2px solid var(--ink); display:flex; align-items:center; gap:9px; padding:0 18px; background:#fafafa; }
+    .dot { width:12px; height:12px; border:2px solid var(--ink); border-radius:50%; }
+    .dot.pink { background:var(--pink); }
+    .dot.lav { background:var(--lav); }
+    .url { margin-left:11px; flex:1; background:#f0eeeb; border-radius:10px; padding:8px 13px; color:#6d6864; font-size:13px; }
+    .screen { height:505px; position:relative; overflow:hidden; background:linear-gradient(135deg,#1b1a20 0%,#312f39 55%,#5d5969 100%); padding:42px; }
+    .screen.light { background:linear-gradient(135deg,#fefdf9 0%,#e6e0ff 55%,#ffd9e3 100%); }
+    .headline { width:280px; color:#fff; font-size:42px; line-height:.95; letter-spacing:-.07em; font-weight:900; }
+    .light .headline { color:var(--ink); }
+    .sub { color:rgba(255,255,255,.74); font-size:16px; line-height:1.35; max-width:290px; margin-top:18px; }
+    .light .sub { color:#6e6667; }
+    .fake-card { width:300px; height:150px; margin-top:46px; border:2px solid rgba(255,255,255,.45); border-radius:18px; background:rgba(255,255,255,.14); }
+    .light .fake-card { border-color:rgba(17,17,17,.12); background:rgba(255,255,255,.45); }
+    .cat { position:absolute; right:26px; bottom:24px; width:118px; height:118px; object-fit:contain; filter:drop-shadow(0 9px 0 rgba(0,0,0,.16)); }
+    .tag { position:absolute; right:20px; bottom:155px; background:var(--pink); border:2px solid var(--ink); padding:9px 12px; border-radius:999px; font-size:13px; font-weight:800; }
+    .arrow { position:absolute; right:140px; bottom:133px; width:74px; height:48px; border-top:3px solid var(--ink); transform:rotate(-22deg); }
+    .arrow:after { content:""; position:absolute; right:-2px; top:-7px; width:14px; height:14px; border-top:3px solid var(--ink); border-right:3px solid var(--ink); transform:rotate(30deg); }
+    .caption { display:flex; justify-content:space-between; padding:17px 20px 20px; align-items:center; }
+    .caption strong { font-size:20px; }
+    .caption span { color:var(--muted); font-size:14px; }
+    .footer { margin-top:29px; text-align:center; font-size:18px; font-weight:800; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="top">
+      <div><div class="eyebrow">ONE CAT / EVERY TAB</div><h1>Same little spot.<br>Different page.</h1></div>
+      <div class="note">Drag Mochi once and the position is remembered across eligible tabs and viewport sizes. Your companion keeps its corner while the internet changes underneath it.</div>
+    </div>
+    <section class="tabs">
+      <article class="browser">
+        <div class="bar"><span class="dot pink"></span><span class="dot lav"></span><span class="dot"></span><div class="url">recordly.dev</div></div>
+        <div class="screen"><div class="headline">Make space for a little company.</div><div class="sub">Mochi stays quietly in the corner while you browse, work, or watch.</div><div class="fake-card"></div><span class="tag">Mochi stays here</span><span class="arrow"></span><img class="cat" src="../assets/bad-boy.png" alt="Bad Boy cat"></div>
+        <div class="caption"><strong>Tab one</strong><span>same position</span></div>
+      </article>
+      <article class="browser">
+        <div class="bar"><span class="dot pink"></span><span class="dot lav"></span><span class="dot"></span><div class="url">github.com</div></div>
+        <div class="screen light"><div class="headline">Your little corner<br>comes with you.</div><div class="sub">Switch tabs without losing the cat, the mood, or the placement.</div><div class="fake-card"></div><span class="tag">still here :3</span><span class="arrow"></span><img class="cat" src="../assets/black-cat.png" alt="Black cat"></div>
+        <div class="caption"><strong>Tab two</strong><span>same position</span></div>
+      </article>
+    </section>
+    <div class="footer">A tiny bit of continuity for your browser.</div>
+  </main>
+</body>
+</html>

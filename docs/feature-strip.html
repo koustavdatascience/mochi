@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mochi feature showcase</title>
+  <style>
+    :root { --ink:#111; --paper:#faf8f4; --pink:#ff7195; --lav:#dfdbff; --yellow:#ffe98f; --muted:#68615d; }
+    * { box-sizing:border-box; }
+    body { margin:0; width:1400px; height:760px; background:var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
+    .page { width:1170px; margin:62px auto; }
+    .header { display:flex; justify-content:space-between; align-items:end; margin-bottom:30px; }
+    .eyebrow { font-size:14px; letter-spacing:.2em; font-weight:900; }
+    h1 { font-size:52px; margin:8px 0 0; letter-spacing:-.07em; }
+    .header p { max-width:385px; color:var(--muted); line-height:1.45; font-size:17px; margin:0; }
+    .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
+    .card { height:445px; border:3px solid var(--ink); border-radius:26px; padding:23px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:8px 8px 0 var(--ink); overflow:hidden; position:relative; }
+    .card:nth-child(1) { background:var(--pink); }
+    .card:nth-child(2) { background:var(--lav); }
+    .card:nth-child(3) { background:var(--yellow); }
+    .num { font-size:14px; letter-spacing:.16em; font-weight:900; }
+    h2 { font-size:32px; line-height:1; letter-spacing:-.06em; margin:0 0 10px; }
+    .copy { font-size:17px; line-height:1.42; max-width:280px; }
+    .mock { border:3px solid var(--ink); border-radius:18px; background:#fff; height:180px; position:relative; overflow:hidden; }
+    .mock .topbar { height:31px; border-bottom:2px solid var(--ink); background:#fafafa; }
+    .mock .line { position:absolute; height:11px; border-radius:9px; background:#ddd7d4; left:18px; }
+    .mock .line.one { top:57px; width:130px; }
+    .mock .line.two { top:82px; width:190px; }
+    .mock .line.three { top:107px; width:155px; }
+    .mock .cat { position:absolute; width:64px; height:64px; right:17px; bottom:14px; object-fit:contain; }
+    .mock .logo { position:absolute; width:65px; height:65px; object-fit:contain; right:16px; bottom:15px; mix-blend-mode:multiply; }
+    .toggle { position:absolute; right:18px; top:54px; width:48px; height:25px; border:3px solid var(--ink); border-radius:20px; background:var(--ink); }
+    .toggle:after { content:""; position:absolute; width:17px; height:17px; right:2px; top:1px; border-radius:50%; background:#fff; }
+    .select { position:absolute; left:18px; right:18px; top:54px; height:37px; border:2px solid var(--ink); border-radius:10px; background:#fff; font-size:12px; padding:9px; }
+    .heart { position:absolute; font-size:100px; right:-6px; top:-21px; transform:rotate(12deg); opacity:.15; }
+    .footer { text-align:center; margin-top:31px; font-size:18px; font-weight:800; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="header"><div><div class="eyebrow">SMALL FEATURES / SOFT LANDING</div><h1>Nothing extra.<br>Just enough cat.</h1></div><p>Mochi stays tiny on purpose. Pick a mood, keep a corner, and get back to whatever you were doing.</p></header>
+    <section class="grid">
+      <article class="card"><span class="num">01 / PICK A MOOD</span><div class="mock"><div class="topbar"></div><div class="select">Rolling Cat <span style="float:right">⌄</span></div><img class="cat" src="../assets/bttv-rolling-cat.png" alt="Rolling cat"></div><div><h2>19 little personalities.</h2><div class="copy">From sleepy to chaotic, there is a tiny companion for the tab you are in.</div></div><span class="heart">♡</span></article>
+      <article class="card"><span class="num">02 / STAY AROUND</span><div class="mock"><div class="topbar"></div><div class="line one"></div><div class="line two"></div><div class="line three"></div><div class="toggle"></div><img class="cat" src="../assets/mochi-logo.png" alt="Mochi logo"></div><div><h2>One click to bring it back.</h2><div class="copy">Show cat injects Mochi into the current eligible page without a manual refresh.</div></div><span class="heart">✦</span></article>
+      <article class="card"><span class="num">03 / KEEP IT LOCAL</span><div class="mock"><div class="topbar"></div><div class="line one" style="width:180px"></div><div class="line two" style="width:145px"></div><div class="line three" style="width:200px"></div><img class="logo" src="../assets/mochi-logo.png" alt="Mochi logo"></div><div><h2>No account required.</h2><div class="copy">Local assets, local preferences, no feed, no analytics, no noisy dashboard.</div></div><span class="heart">♡</span></article>
+    </section>
+    <div class="footer">Made for cozy tabs, long browsing sessions, and people who like a little company :3</div>
+  </main>
+</body>
+</html>
