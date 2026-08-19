@@ -41,11 +41,75 @@ Mochi is a lightweight Chromium extension that places a tiny animated cat on the
 
 ## Quick start
 
-1. Clone or download this repository.
-2. Open `chrome://extensions/` in Chrome or Chromium, or `edge://extensions/` in Microsoft Edge.
-3. Enable **Developer mode**.
-4. Click **Load unpacked** and select the folder containing `manifest.json`.
-5. Open a normal website, click the Mochi toolbar icon, choose a cat, and switch on **Show cat**.
+You do not need Git or any programming knowledge to install Mochi. The easiest method is to download the project as a ZIP file and add it to your browser.
+
+### 1. Download Mochi
+
+Open the [Mochi GitHub repository](https://github.com/koustavdatascience/mochi), click the green **Code** button, and choose **Download ZIP**.
+
+### 2. Extract the ZIP file
+
+Open your computer’s **Downloads** folder and find the file named something like `mochi-main.zip`. Double-click it and extract or copy the folder somewhere easy to find, such as your Desktop or Documents folder.
+
+Make sure you select the extracted folder, not the ZIP file, in the next step.
+
+### 3. Open your browser’s extensions page
+
+The easiest way is to open your browser menu by clicking the **three dots** in the top-right corner. Then choose **Extensions** and **Manage Extensions**, as shown below.
+
+<p align="center">
+  <img src="docs/screenshots/install-extensions-menu.png" alt="Chrome menu showing Extensions and Manage Extensions" width="560">
+</p>
+
+If you prefer, you can also copy and paste one of these addresses into your browser’s address bar:
+
+* **Chrome or Chromium:** `chrome://extensions`
+* **Microsoft Edge:** `edge://extensions`
+* **Brave:** `brave://extensions`
+* **Vivaldi:** `vivaldi://extensions`
+* **Opera:** `opera://extensions`
+
+Here is a quick visual reference for the browser addresses:
+
+<p align="center">
+  <img src="docs/screenshots/install-browser-addresses.png" alt="Browser extension page addresses for Chrome, Edge, Brave, Vivaldi, and Opera" width="560">
+</p>
+
+### 4. Enable Developer mode
+
+Find the **Developer mode** switch, usually near the top right of the extensions page, and turn it on.
+
+### 5. Add Mochi
+
+Click **Load unpacked** and select the extracted Mochi folder. Choose the folder that contains `manifest.json` directly inside it. If you see a folder named `mochi-main`, open it and select that folder.
+
+Mochi should now appear in your list of installed extensions.
+
+### 6. Start using Mochi
+
+Open a normal website, click the **Extensions** button in your browser’s toolbar, and select Mochi. Choose your favorite cat and switch on **Show cat**.
+
+You can drag Mochi to a different corner of the page. Your selected cat and position will be remembered across your tabs.
+
+### Troubleshooting
+
+If Mochi does not appear, check that you selected the extracted folder and not the ZIP file. The selected folder should contain `manifest.json`, `background.js`, and `popup.html`.
+
+If the cat is not visible, open the Mochi popup and make sure **Show cat** is enabled. You may also need to refresh the webpage after installing the extension.
+
+Some browser pages, including browser settings, extension stores, and new tab pages, may not allow extensions to display content. Try opening a regular website instead.
+
+Mochi is designed for Chromium-based browsers. It is documented for Chrome, Chromium, and Microsoft Edge, and should also work in other Chromium-based browsers such as Brave, Vivaldi, and Opera. Firefox and Safari are not supported as-is.
+
+> If you get stuck, send a message through the Mochi Product Hunt page or [open an issue on GitHub](https://github.com/koustavdatascience/mochi/issues). Include your browser name and a screenshot of the step where you got stuck.
+
+### For developers
+
+If you already use Git, you can clone the repository instead. This is not required for regular users.
+
+```bash
+git clone https://github.com/koustavdatascience/mochi.git
+```
 
 ## Cat styles
 
@@ -54,10 +118,6 @@ Mochi includes **Bad Boy, Black Cat, Rolling Cat, Cream Cat, Frog Cat, Tiny Cat,
 <p align="center">
   <img src="docs/screenshots/cat-gallery.png" alt="Gallery of the 20 Mochi cat styles" width="900">
 </p>
-
-## Privacy and permissions
-
-Mochi stores only the preferences needed to keep the experience consistent. It does not upload page content, browsing history, images, or analytics data. The extension’s `scripting` permission and host access are used to restore Mochi in already-open eligible tabs; no remote content is fetched.
 
 ## Development
 
@@ -89,6 +149,10 @@ To create a local ZIP:
 zip -qr ../Mochi-extension.zip . -x '.git/*'
 unzip -tq ../Mochi-extension.zip
 ```
+
+### Technical details: privacy and permissions
+
+Mochi stores only the preferences needed to keep the experience consistent. It does not upload page content, browsing history, images, or analytics data. The extension’s `scripting` permission and host access are used to restore Mochi in already-open eligible tabs; no remote content is fetched.
 
 ## Contributing
 
