@@ -87,7 +87,7 @@ On the extensions page, find the **Developer mode** switch near the top-right co
   <img src="docs/screenshots/install-step-4-developer-mode.png" alt="Chromium extensions page with Developer mode highlighted" width="760">
 </p>
 
-This allows your browser to install Mochi directly from the folder you downloaded.
+At this point, the extensions page will still be empty. Mochi will appear only after you complete the next step.
 
 ### 5. Load the Mochi folder
 
@@ -97,7 +97,7 @@ Click **Load unpacked**. In the folder window, open the extracted `mochi-main` f
   <img src="docs/screenshots/install-step-5-load-unpacked.png" alt="Chromium Load unpacked button and Mochi folder containing manifest.json" width="760">
 </p>
 
-Mochi should now appear in your list of installed extensions.
+After you select the folder, Mochi should appear in your list of installed extensions. This is the moment when Mochi is installed in your browser.
 
 ### 6. Choose your cat and start using Mochi
 
