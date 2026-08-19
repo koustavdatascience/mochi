@@ -111,15 +111,11 @@ You can drag Mochi to a different corner of the page. Your selected cat and posi
 
 ### Troubleshooting
 
-If Mochi does not appear, check that you selected the extracted folder and not the ZIP file. The selected folder should contain `manifest.json`, `background.js`, and `popup.html`.
+If Mochi does not work, first reload the webpage.
 
-If the cat is not visible, open the Mochi popup and make sure **Show cat** is enabled. You may also need to refresh the webpage after installing the extension.
+If it still does not work, open your browser’s extensions page, remove Mochi, and load the extracted folder again with **Load unpacked**.
 
-Some browser pages, including browser settings, extension stores, and new tab pages, may not allow extensions to display content. Try opening a regular website instead.
-
-Mochi is designed for Chromium-based browsers. It is documented for Chrome, Chromium, and Microsoft Edge, and should also work in other Chromium-based browsers such as Brave, Vivaldi, and Opera. Firefox and Safari are not supported as-is.
-
-> If you get stuck, send a message through the Mochi Product Hunt page or [open an issue on GitHub](https://github.com/koustavdatascience/mochi/issues). Include your browser name and a screenshot of the step where you got stuck.
+If the problem continues or your browser is not compatible, email [koustavdatascience@gmail.com](mailto:koustavdatascience@gmail.com).
 
 ### For developers
 
