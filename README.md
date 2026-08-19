@@ -177,5 +177,7 @@ Small, focused contributions are welcome, especially new cat styles, accessibili
 For feedback or issues, email [koustavdatascience@gmail.com](mailto:koustavdatascience@gmail.com). 
 ## License
 
-This is a personal side project. Review the repository before redistributing the extension or its bundled media assets.
+Copyright © 2026 Koustav Datascience.
+
+Mochi is licensed under the [GNU General Public License v3.0](LICENSE). See the [`LICENSE`](LICENSE) file for the complete terms.
 
