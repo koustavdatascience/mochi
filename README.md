@@ -43,25 +43,35 @@ Mochi is a lightweight Chromium extension that places a tiny animated cat on the
 
 You do not need Git or any programming knowledge to install Mochi. The easiest method is to download the project as a ZIP file and add it to your browser.
 
-### 1. Download Mochi
+### 1. Download Mochi from GitHub
 
-Open the [Mochi GitHub repository](https://github.com/koustavdatascience/mochi), click the green **Code** button, and choose **Download ZIP**.
+Open the [Mochi GitHub repository](https://github.com/koustavdatascience/mochi). Click the green **Code** button, then click **Download ZIP**.
 
-### 2. Extract the ZIP file
+<p align="center">
+  <img src="docs/screenshots/install-step-1-github-download.png" alt="GitHub Code menu with Download ZIP highlighted for the Mochi repository" width="760">
+</p>
 
-Open your computer’s **Downloads** folder and find the file named something like `mochi-main.zip`. Double-click it and extract or copy the folder somewhere easy to find, such as your Desktop or Documents folder.
+You do not need to clone the repository or install Git. The ZIP download is the easiest option for most people.
 
-Make sure you select the extracted folder, not the ZIP file, in the next step.
+### 2. Extract the downloaded ZIP file
+
+Open your computer’s **Downloads** folder and find `mochi-main.zip`. Right-click it and choose **Extract All**. This creates a new folder named `mochi-main`.
+
+<p align="center">
+  <img src="docs/screenshots/install-step-2-extract-zip.png" alt="Downloads folder showing mochi-main.zip and the Extract All option" width="760">
+</p>
+
+Keep the extracted `mochi-main` folder somewhere easy to find, such as your Desktop or Documents folder. Do not select the ZIP file itself when installing Mochi.
 
 ### 3. Open your browser’s extensions page
 
-The easiest way is to open your browser menu by clicking the **three dots** in the top-right corner. Then choose **Extensions** and **Manage Extensions**, as shown below.
+Open your browser menu by clicking the **three dots** in the top-right corner. Choose **Extensions**, then **Manage Extensions**.
 
 <p align="center">
-  <img src="docs/screenshots/install-extensions-menu.png" alt="Chrome menu showing Extensions and Manage Extensions" width="560">
+  <img src="docs/screenshots/install-step-3-open-extensions.png" alt="Chromium browser menu showing Extensions and Manage Extensions" width="760">
 </p>
 
-If you prefer, you can also copy and paste one of these addresses into your browser’s address bar:
+If your browser menu looks different, you can paste one of these addresses into the address bar:
 
 * **Chrome or Chromium:** `chrome://extensions`
 * **Microsoft Edge:** `edge://extensions`
@@ -69,25 +79,33 @@ If you prefer, you can also copy and paste one of these addresses into your brow
 * **Vivaldi:** `vivaldi://extensions`
 * **Opera:** `opera://extensions`
 
-Here is a quick visual reference for the browser addresses:
+### 4. Turn on Developer mode
+
+On the extensions page, find the **Developer mode** switch near the top-right corner and turn it on.
 
 <p align="center">
-  <img src="docs/screenshots/install-browser-addresses.png" alt="Browser extension page addresses for Chrome, Edge, Brave, Vivaldi, and Opera" width="560">
+  <img src="docs/screenshots/install-step-4-developer-mode.png" alt="Chromium extensions page with Developer mode highlighted" width="760">
 </p>
 
-### 4. Enable Developer mode
+This allows your browser to install Mochi directly from the folder you downloaded.
 
-Find the **Developer mode** switch, usually near the top right of the extensions page, and turn it on.
+### 5. Load the Mochi folder
 
-### 5. Add Mochi
+Click **Load unpacked**. In the folder window, open the extracted `mochi-main` folder and select the folder that contains `manifest.json`.
 
-Click **Load unpacked** and select the extracted Mochi folder. Choose the folder that contains `manifest.json` directly inside it. If you see a folder named `mochi-main`, open it and select that folder.
+<p align="center">
+  <img src="docs/screenshots/install-step-5-load-unpacked.png" alt="Chromium Load unpacked button and Mochi folder containing manifest.json" width="760">
+</p>
 
 Mochi should now appear in your list of installed extensions.
 
-### 6. Start using Mochi
+### 6. Choose your cat and start using Mochi
 
-Open a normal website, click the **Extensions** button in your browser’s toolbar, and select Mochi. Choose your favorite cat and switch on **Show cat**.
+Open a normal website, click the **Extensions** button in your browser’s toolbar, and select Mochi. Choose your favorite cat and turn on **Show cat**.
+
+<p align="center">
+  <img src="docs/screenshots/install-step-6-use-mochi.png" alt="Mochi popup with Show cat enabled and a cat visible on a webpage" width="760">
+</p>
 
 You can drag Mochi to a different corner of the page. Your selected cat and position will be remembered across your tabs.
 
