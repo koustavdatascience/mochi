@@ -164,13 +164,6 @@ zip -qr ../Mochi-extension.zip . -x '.git/*'
 unzip -tq ../Mochi-extension.zip
 ```
 
-### Technical details: privacy and permissions
-
-Mochi stores only the preferences needed to keep the experience consistent. It does not upload page content, browsing history, images, or analytics data. The extension’s `scripting` permission and host access are used to restore Mochi in already-open eligible tabs; no remote content is fetched.
-
-## Contributing
-
-Small, focused contributions are welcome, especially new cat styles, accessibility improvements, browser-compatibility fixes, UI polish, and documentation updates. New cat styles should include both `.gif` and `.png` assets plus matching entries in `content.js`, `background.js`, `popup.html`, `README.md`, and `verify_extension.py`.
 
 ## Contact
 
