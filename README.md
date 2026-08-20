@@ -133,36 +133,6 @@ Mochi includes **Bad Boy, Black Cat, Rolling Cat, Cream Cat, Frog Cat, Tiny Cat,
   <img src="docs/screenshots/cat-gallery.png" alt="Gallery of the 20 Mochi cat styles" width="900">
 </p>
 
-## Development
-
-Mochi is a plain Manifest V3 extension made with HTML, CSS, JavaScript, and local assets. No build framework or package manager is required.
-
-```text
-manifest.json       extension metadata and permissions
-background.js       shared state, storage, and tab recovery
-content.js          on-page cat, dragging, injection guard, and sync
-cat.css             isolated on-page cat styling
-popup.html/css/js   popup structure, styling, and controls
-assets/             official logo, icons, GIFs, and paused PNG frames
-docs/               showcase sources and README screenshots
-verify_extension.py local consistency checks
-```
-
-Run the checks before opening a pull request:
-
-```bash
-node --check content.js
-node --check popup.js
-node --check background.js
-python3 verify_extension.py
-```
-
-To create a local ZIP:
-
-```bash
-zip -qr ../Mochi-extension.zip . -x '.git/*'
-unzip -tq ../Mochi-extension.zip
-```
 
 
 ## Contact
