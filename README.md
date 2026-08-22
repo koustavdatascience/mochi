@@ -24,6 +24,7 @@
 
 Mochi is a lightweight Chromium extension that places a tiny animated cat on the pages you browse. Pick a style, drag it into a corner, and let it quietly keep you company while you work, study, watch, or wander around the web.
 
+> **Product Hunt launch:** Mochi reached **#12** on the launch day leaderboard with **107 points**. Thanks to everyone who checked it out and supported the tiny cat :3
 
 <p align="center">
   
